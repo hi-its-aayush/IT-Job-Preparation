@@ -6,55 +6,41 @@
 <title>IT Support Interview — Day Before Revision</title>
 <style>
   :root {
-    --bg: #f8f7f4;
-    --surface: #ffffff;
-    --border: #e5e2db;
-    --text: #1a1a1a;
-    --muted: #6b6860;
-    --accent: #185FA5;
-    --accent-bg: #E6F1FB;
-    --accent-text: #0C447C;
-    --green: #3B6D11;
-    --green-bg: #EAF3DE;
-    --green-text: #27500A;
-    --amber: #854F0B;
-    --amber-bg: #FAEEDA;
-    --amber-text: #633806;
-    --red: #A32D2D;
-    --red-bg: #FCEBEB;
-    --red-text: #791F1F;
-    --purple: #534AB7;
-    --purple-bg: #EEEDFE;
-    --purple-text: #3C3489;
-    --radius: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --bg: #f8f7f4; --surface: #ffffff; --border: #e5e2db; --text: #1a1a1a; --muted: #6b6860;
+    --accent: #185FA5; --accent-bg: #E6F1FB; --accent-text: #0C447C;
+    --green: #3B6D11; --green-bg: #EAF3DE; --green-text: #27500A;
+    --amber: #854F0B; --amber-bg: #FAEEDA; --amber-text: #633806;
+    --red: #A32D2D; --red-bg: #FCEBEB; --red-text: #791F1F;
+    --purple: #534AB7; --purple-bg: #EEEDFE; --purple-text: #3C3489;
+    --teal: #0F6E56; --teal-bg: #E1F5EE; --teal-text: #085041;
+    --radius: 10px; --shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
-
   .page { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
-
-  .header { margin-bottom: 28px; }
+  .header { margin-bottom: 20px; }
   .header h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
   .header p { color: var(--muted); font-size: 13px; margin-top: 4px; }
   .badges { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-  .badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.3px; }
+  .badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
   .badge-blue { background: var(--accent-bg); color: var(--accent-text); }
   .badge-green { background: var(--green-bg); color: var(--green-text); }
   .badge-amber { background: var(--amber-bg); color: var(--amber-text); }
-
-  .tabs { display: flex; gap: 4px; margin-bottom: 24px; background: var(--border); padding: 4px; border-radius: var(--radius); width: fit-content; }
+  .progress-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; margin-bottom: 20px; display: flex; align-items: center; gap: 14px; }
+  .progress-label { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .progress-bar-bg { flex: 1; background: var(--border); border-radius: 99px; height: 6px; }
+  .progress-bar-fill { height: 6px; border-radius: 99px; background: var(--green); transition: width 0.3s; }
+  .progress-count { font-size: 12px; font-weight: 600; color: var(--green); white-space: nowrap; }
+  .reset-btn { font-size: 11px; color: var(--muted); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  .reset-btn:hover { color: var(--red); border-color: var(--red); }
+  .tabs { display: flex; gap: 4px; margin-bottom: 24px; background: var(--border); padding: 4px; border-radius: var(--radius); width: fit-content; flex-wrap: wrap; }
   .tab { padding: 7px 16px; border-radius: 7px; border: none; background: transparent; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--muted); transition: all 0.15s; }
   .tab.active { background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
   .tab:hover:not(.active) { color: var(--text); }
-
   .panel { display: none; }
   .panel.active { display: block; }
-
-  /* RAPID FIRE */
   .rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   @media (max-width: 600px) { .rf-grid { grid-template-columns: 1fr; } }
-
   .rf-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
   .rf-header { padding: 10px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
   .rf-header.blue { background: var(--accent-bg); color: var(--accent-text); }
@@ -62,16 +48,17 @@
   .rf-header.amber { background: var(--amber-bg); color: var(--amber-text); }
   .rf-header.purple { background: var(--purple-bg); color: var(--purple-text); }
   .rf-header.red { background: var(--red-bg); color: var(--red-text); }
-
+  .rf-header.teal { background: var(--teal-bg); color: var(--teal-text); }
   .rf-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; border-bottom: 1px solid var(--border); gap: 12px; }
   .rf-row:last-child { border-bottom: none; }
   .rf-q { color: var(--muted); font-size: 13px; flex: 1; }
-  .rf-a { font-weight: 600; font-size: 13px; text-align: right; white-space: nowrap; }
-  .rf-a code { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: 'Courier New', monospace; font-size: 12px; font-weight: 400; }
-
-  /* INTERVIEW Q&A */
+  .rf-a { font-weight: 600; font-size: 13px; text-align: right; }
+  .rf-a code { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: monospace; font-size: 12px; font-weight: 400; }
+  .qa-section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
+  .qa-section-label:first-child { margin-top: 0; }
   .qa-list { display: flex; flex-direction: column; gap: 10px; }
-  .qa-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .qa-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: border-color 0.2s; }
+  .qa-item.reviewed { border-color: var(--green); }
   .qa-q { padding: 14px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
   .qa-q:hover { background: var(--bg); }
   .qa-label { font-size: 11px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; margin-bottom: 3px; }
@@ -81,14 +68,21 @@
   .qa-body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); }
   .qa-item.open .qa-body { display: block; }
   .qa-answer { background: var(--accent-bg); border-left: 3px solid var(--accent); padding: 12px 14px; border-radius: 0 6px 6px 0; margin: 12px 0 8px; font-size: 13px; line-height: 1.7; color: var(--accent-text); }
+  .qa-answer.amber { background: var(--amber-bg); border-left-color: var(--amber); color: var(--amber-text); }
+  .qa-answer.green { background: var(--green-bg); border-left-color: var(--green); color: var(--green-text); }
   .qa-body p { margin-top: 8px; font-size: 13px; color: var(--muted); line-height: 1.6; }
   .qa-body strong { color: var(--text); font-weight: 600; }
+  .qa-body ul { margin: 8px 0 0 16px; font-size: 13px; color: var(--muted); }
+  .qa-body ul li { margin-bottom: 4px; }
   .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
   .tag-common { background: var(--red-bg); color: var(--red-text); }
   .tag-tech { background: var(--accent-bg); color: var(--accent-text); }
   .tag-behav { background: var(--amber-bg); color: var(--amber-text); }
-
-  /* TROUBLESHOOTING */
+  .tag-trap { background: var(--purple-bg); color: var(--purple-text); }
+  .mark-btn { margin-top: 12px; font-size: 12px; padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; color: var(--muted); }
+  .mark-btn:hover { border-color: var(--green); color: var(--green); }
+  .qa-item.reviewed .mark-btn { background: var(--green-bg); border-color: var(--green); color: var(--green-text); }
+  .short-tip { background: var(--amber-bg); border-left: 3px solid var(--amber); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 8px; font-size: 12px; color: var(--amber-text); }
   .ts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   @media (max-width: 640px) { .ts-grid { grid-template-columns: 1fr; } }
   .ts-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
@@ -104,8 +98,6 @@
   .step-text code { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; font-family: monospace; font-size: 12px; }
   .tip { background: var(--green-bg); border-left: 3px solid var(--green); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; font-size: 12px; color: var(--green-text); }
   .warn { background: var(--amber-bg); border-left: 3px solid var(--amber); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; font-size: 12px; color: var(--amber-text); }
-
-  /* REFERENCE */
   .ref-section { margin-bottom: 20px; }
   .ref-title { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
   .ref-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); }
@@ -116,24 +108,13 @@
   .cmd-table td:first-child { font-family: monospace; font-size: 12px; color: var(--purple); }
   .port-table td:first-child { font-weight: 700; color: var(--text); font-family: monospace; }
   .sla-table td:first-child { font-family: inherit; font-weight: 500; }
-  .p1 { color: var(--red); font-weight: 700; }
-  .p2 { color: var(--amber); font-weight: 600; }
-  .p3 { color: var(--accent); font-weight: 600; }
-  .p4 { color: var(--green); }
-
-  .search-wrap { position: relative; margin-bottom: 20px; }
-  .search-wrap input { width: 100%; padding: 10px 14px 10px 36px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); font-size: 14px; color: var(--text); }
-  .search-wrap input:focus { outline: none; border-color: var(--accent); }
-  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 14px; }
-
-  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-
-  .highlight { background: #fff3cd; border-radius: 2px; }
+  .plain-table td:first-child { font-family: inherit; color: var(--text); font-size: 13px; }
+  .p1 { color: var(--red); font-weight: 700; } .p2 { color: var(--amber); font-weight: 600; }
+  .p3 { color: var(--accent); font-weight: 600; } .p4 { color: var(--green); }
 </style>
 </head>
 <body>
 <div class="page">
-
   <div class="header">
     <h1>IT Support Interview — Day Before Revision</h1>
     <p>Aayush Acharya &nbsp;·&nbsp; Level 1/2 IT Support &nbsp;·&nbsp; Sydney, NSW</p>
@@ -148,19 +129,24 @@
     </div>
   </div>
 
-  <div class="tabs">
-    <button class="tab active" onclick="switchTab('rapid')">⚡ Rapid Fire</button>
-    <button class="tab" onclick="switchTab('qa')">🔥 Interview Q&amp;A</button>
-    <button class="tab" onclick="switchTab('ts')">🛠 Troubleshooting</button>
-    <button class="tab" onclick="switchTab('ref')">📋 Reference</button>
+  <div class="progress-wrap">
+    <span class="progress-label">Q&amp;A reviewed</span>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-fill" style="width:0%"></div></div>
+    <span class="progress-count" id="prog-count">0 / 15</span>
+    <button class="reset-btn" onclick="resetProgress()">Reset</button>
   </div>
 
-  <!-- ======== RAPID FIRE ======== -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('rapid', this)">⚡ Rapid Fire</button>
+    <button class="tab" onclick="switchTab('qa', this)">🔥 Interview Q&amp;A</button>
+    <button class="tab" onclick="switchTab('ts', this)">🛠 Troubleshooting</button>
+    <button class="tab" onclick="switchTab('ref', this)">📋 Reference</button>
+  </div>
+
+  <!-- RAPID FIRE -->
   <div id="panel-rapid" class="panel active">
-    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Questions that should take you under 10 seconds to answer. If any of these are slow, review it.</p>
-
+    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Every answer should take under 10 seconds. Slow on any of these? That's your weak spot.</p>
     <div class="rf-grid">
-
       <div class="rf-card">
         <div class="rf-header blue">Ports — Know These Cold</div>
         <div class="rf-row"><span class="rf-q">DNS</span><span class="rf-a">53</span></div>
@@ -173,355 +159,330 @@
         <div class="rf-row"><span class="rf-q">FTP</span><span class="rf-a">21</span></div>
         <div class="rf-row"><span class="rf-q">LDAP</span><span class="rf-a">389</span></div>
       </div>
-
       <div class="rf-card">
         <div class="rf-header green">IP Addresses — Instant Recall</div>
         <div class="rf-row"><span class="rf-q">Loopback address</span><span class="rf-a"><code>127.0.0.1</code></span></div>
-        <div class="rf-row"><span class="rf-q">APIPA range (DHCP failed)</span><span class="rf-a"><code>169.254.x.x</code></span></div>
-        <div class="rf-row"><span class="rf-q">Class A private range</span><span class="rf-a"><code>10.0.0.0/8</code></span></div>
-        <div class="rf-row"><span class="rf-q">Class B private range</span><span class="rf-a"><code>172.16–31.x.x</code></span></div>
-        <div class="rf-row"><span class="rf-q">Class C private range</span><span class="rf-a"><code>192.168.x.x</code></span></div>
+        <div class="rf-row"><span class="rf-q">APIPA (DHCP failed)</span><span class="rf-a"><code>169.254.x.x</code></span></div>
+        <div class="rf-row"><span class="rf-q">Class A private</span><span class="rf-a"><code>10.0.0.0/8</code></span></div>
+        <div class="rf-row"><span class="rf-q">Class B private</span><span class="rf-a"><code>172.16–31.x.x</code></span></div>
+        <div class="rf-row"><span class="rf-q">Class C private</span><span class="rf-a"><code>192.168.x.x</code></span></div>
         <div class="rf-row"><span class="rf-q">/24 usable hosts</span><span class="rf-a">254</span></div>
-        <div class="rf-row"><span class="rf-q">What is NAT?</span><span class="rf-a rf-q" style="text-align:right;">Private IPs → public IP via router</span></div>
-        <div class="rf-row"><span class="rf-q">Switch operates at layer</span><span class="rf-a">2 (MAC)</span></div>
-        <div class="rf-row"><span class="rf-q">Router operates at layer</span><span class="rf-a">3 (IP)</span></div>
+        <div class="rf-row"><span class="rf-q">Switch / Router layer</span><span class="rf-a">L2 / L3</span></div>
+        <div class="rf-row"><span class="rf-q">What is NAT?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Private IPs share one public IP via router</span></div>
       </div>
-
       <div class="rf-card">
-        <div class="rf-header amber">AD / Identity — Daily Tasks</div>
-        <div class="rf-row"><span class="rf-q">Tool to manage AD users</span><span class="rf-a"><code>dsa.msc</code></span></div>
-        <div class="rf-row"><span class="rf-q">System properties / domain join</span><span class="rf-a"><code>sysdm.cpl</code></span></div>
+        <div class="rf-header amber">AD / Identity — Daily Tools</div>
+        <div class="rf-row"><span class="rf-q">Manage AD users</span><span class="rf-a"><code>dsa.msc</code></span></div>
+        <div class="rf-row"><span class="rf-q">Domain join / system props</span><span class="rf-a"><code>sysdm.cpl</code></span></div>
         <div class="rf-row"><span class="rf-q">Services manager</span><span class="rf-a"><code>services.msc</code></span></div>
-        <div class="rf-row"><span class="rf-q">Event Viewer (error logs)</span><span class="rf-a"><code>eventvwr.msc</code></span></div>
+        <div class="rf-row"><span class="rf-q">Event Viewer</span><span class="rf-a"><code>eventvwr.msc</code></span></div>
         <div class="rf-row"><span class="rf-q">Network connections</span><span class="rf-a"><code>ncpa.cpl</code></span></div>
         <div class="rf-row"><span class="rf-q">Group Policy management</span><span class="rf-a"><code>gpmc.msc</code></span></div>
         <div class="rf-row"><span class="rf-q">Apply GPO immediately</span><span class="rf-a"><code>gpupdate /force</code></span></div>
-        <div class="rf-row"><span class="rf-q">AD hierarchy (top → bottom)</span><span class="rf-a rf-q" style="text-align:right;">Forest → Tree → Domain → OU</span></div>
+        <div class="rf-row"><span class="rf-q">AD hierarchy (top → bottom)</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Forest → Tree → Domain → OU</span></div>
       </div>
-
+      <div class="rf-card">
+        <div class="rf-header teal">Entra ID / Azure AD</div>
+        <div class="rf-row"><span class="rf-q">What replaced Azure AD?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Microsoft Entra ID (same product)</span></div>
+        <div class="rf-row"><span class="rf-q">Cloud vs on-prem AD</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Entra ID = cloud; AD DS = on-prem</span></div>
+        <div class="rf-row"><span class="rf-q">Revoke all sessions for user</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Entra ID → user → Revoke sessions</span></div>
+        <div class="rf-row"><span class="rf-q">Reset MFA for a user</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">M365 Admin → user → Manage MFA</span></div>
+        <div class="rf-row"><span class="rf-q">Conditional Access does what?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Blocks access if device non-compliant</span></div>
+        <div class="rf-row"><span class="rf-q">Hybrid join means</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Device in both on-prem AD + Entra ID</span></div>
+        <div class="rf-row"><span class="rf-q">SSPR stands for</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Self-Service Password Reset</span></div>
+        <div class="rf-row"><span class="rf-q">PIM stands for</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Privileged Identity Management</span></div>
+      </div>
       <div class="rf-card">
         <div class="rf-header purple">Key Definitions — One-Liners</div>
-        <div class="rf-row"><span class="rf-q">What is DNS?</span><span class="rf-a rf-q" style="text-align:right;">Translates names to IPs (phone book)</span></div>
-        <div class="rf-row"><span class="rf-q">What is DHCP?</span><span class="rf-a rf-q" style="text-align:right;">Auto-assigns IPs to devices</span></div>
-        <div class="rf-row"><span class="rf-q">What is APIPA?</span><span class="rf-a rf-q" style="text-align:right;">169.254.x.x — DHCP failed</span></div>
-        <div class="rf-row"><span class="rf-q">TCP vs UDP?</span><span class="rf-a rf-q" style="text-align:right;">TCP = reliable; UDP = fast</span></div>
-        <div class="rf-row"><span class="rf-q">What is PoE?</span><span class="rf-a rf-q" style="text-align:right;">Data cable also powers the device</span></div>
-        <div class="rf-row"><span class="rf-q">What is MFA?</span><span class="rf-a rf-q" style="text-align:right;">Requires 2nd verification factor</span></div>
-        <div class="rf-row"><span class="rf-q">Distrib. List vs Security Group?</span><span class="rf-a rf-q" style="text-align:right;">Email only vs permissions + email</span></div>
-        <div class="rf-row"><span class="rf-q">What is Conditional Access?</span><span class="rf-a rf-q" style="text-align:right;">Block access if device non-compliant</span></div>
-        <div class="rf-row"><span class="rf-q">OSI mnemonic (bottom up)</span><span class="rf-a rf-q" style="text-align:right;">Please Do Not Throw Sausage Pizza Away</span></div>
+        <div class="rf-row"><span class="rf-q">What is DNS?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Translates names to IPs (phone book)</span></div>
+        <div class="rf-row"><span class="rf-q">What is DHCP?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Auto-assigns IPs to devices on network</span></div>
+        <div class="rf-row"><span class="rf-q">APIPA address means</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">DHCP failed — can't reach network</span></div>
+        <div class="rf-row"><span class="rf-q">TCP vs UDP</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">TCP = reliable; UDP = fast</span></div>
+        <div class="rf-row"><span class="rf-q">What is PoE?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Data cable also powers the device</span></div>
+        <div class="rf-row"><span class="rf-q">Dist. List vs Security Group</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Email only vs permissions + email</span></div>
+        <div class="rf-row"><span class="rf-q">OSI mnemonic (bottom up)</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Please Do Not Throw Sausage Pizza Away</span></div>
       </div>
-
       <div class="rf-card">
-        <div class="rf-header red">Intune Actions</div>
-        <div class="rf-row"><span class="rf-q">Laptop stolen — first action</span><span class="rf-a rf-q" style="text-align:right;">Remote Wipe in Intune</span></div>
-        <div class="rf-row"><span class="rf-q">Force policy update</span><span class="rf-a rf-q" style="text-align:right;">Devices → Sync</span></div>
-        <div class="rf-row"><span class="rf-q">Get BitLocker key</span><span class="rf-a rf-q" style="text-align:right;">Devices → Recovery Keys</span></div>
-        <div class="rf-row"><span class="rf-q">Push app to all devices</span><span class="rf-a rf-q" style="text-align:right;">Apps → Assign → Required</span></div>
-        <div class="rf-row"><span class="rf-q">Zero-touch device setup</span><span class="rf-a rf-q" style="text-align:right;">Windows Autopilot</span></div>
-        <div class="rf-row"><span class="rf-q">Check non-compliant devices</span><span class="rf-a rf-q" style="text-align:right;">Devices → Monitor → Compliance</span></div>
+        <div class="rf-header red">Intune + JAMF Quick Actions</div>
+        <div class="rf-row"><span class="rf-q">Laptop stolen — first action</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Remote Wipe in Intune</span></div>
+        <div class="rf-row"><span class="rf-q">Force policy update</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Devices → Sync</span></div>
+        <div class="rf-row"><span class="rf-q">Get BitLocker recovery key</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Devices → Recovery Keys</span></div>
+        <div class="rf-row"><span class="rf-q">Zero-touch Windows setup</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Windows Autopilot</span></div>
+        <div class="rf-row"><span class="rf-q">JAMF manages what?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Apple devices (Mac, iPhone, iPad)</span></div>
+        <div class="rf-row"><span class="rf-q">JAMF zero-touch enrollment</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">ADE via Apple Business Manager</span></div>
+        <div class="rf-row"><span class="rf-q">JAMF remote wipe</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Computers → Management → Wipe</span></div>
       </div>
-
       <div class="rf-card">
         <div class="rf-header blue">Email / M365</div>
-        <div class="rf-row"><span class="rf-q">Email not received — first step</span><span class="rf-a rf-q" style="text-align:right;">Run Message Trace (EAC)</span></div>
-        <div class="rf-row"><span class="rf-q">Check Microsoft outage</span><span class="rf-a rf-q" style="text-align:right;">M365 Admin → Service Health</span></div>
-        <div class="rf-row"><span class="rf-q">Shared mailbox license needed?</span><span class="rf-a rf-q" style="text-align:right;">No (up to 50GB)</span></div>
-        <div class="rf-row"><span class="rf-q">OST file — what is it?</span><span class="rf-a rf-q" style="text-align:right;">Local cached copy of Exchange mailbox</span></div>
-        <div class="rf-row"><span class="rf-q">Outlook not syncing — first check</span><span class="rf-a rf-q" style="text-align:right;">Status bar bottom-right of Outlook</span></div>
+        <div class="rf-row"><span class="rf-q">Email not received — first step</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Run Message Trace in EAC</span></div>
+        <div class="rf-row"><span class="rf-q">Check Microsoft outage</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">M365 Admin → Service Health</span></div>
+        <div class="rf-row"><span class="rf-q">Shared mailbox license?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">No (up to 50GB)</span></div>
+        <div class="rf-row"><span class="rf-q">OST file — what is it?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Local cached copy of Exchange mailbox</span></div>
+        <div class="rf-row"><span class="rf-q">Outlook not syncing — first check</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Status bar bottom-right of Outlook</span></div>
         <div class="rf-row"><span class="rf-q">Outlook safe mode</span><span class="rf-a"><code>Ctrl + click</code> icon</span></div>
-        <div class="rf-row"><span class="rf-q">Email flow order</span><span class="rf-a rf-q" style="text-align:right;">Sender → MX → Gateway → Inbox</span></div>
+        <div class="rf-row"><span class="rf-q">Email flow order</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Sender → MX → Gateway → Inbox</span></div>
       </div>
-
     </div>
   </div>
 
-  <!-- ======== INTERVIEW Q&A ======== -->
+  <!-- INTERVIEW Q&A -->
   <div id="panel-qa" class="panel">
-    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Click any question to see the strong answer. Read it out loud — aim for 30–45 seconds per answer.</p>
-    <div class="qa-list" id="qa-list">
+    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Say each answer out loud. Aim for 30–45 seconds. Mark reviewed when you're confident. Progress saves in your browser.</p>
+    <div class="qa-list">
 
-      <div class="qa-item open">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-common">Most Asked</span></div>
-            <div class="qa-text">Tell me about yourself.</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-section-label">Always Asked First</div>
+
+      <div class="qa-item open" id="qa-0">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Tell me about yourself.</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"I'm an IT support professional with 2+ years of hands-on experience in enterprise environments — most recently at PwC where I provide AV and technical support to partners and executives across a Big 4 environment. Before that, I ran IT support solo across a 200+ user, 9-site hospitality group with a 95% first-contact resolution rate. My strengths are Microsoft 365, Entra ID, Intune, and network troubleshooting, and I back that up with active home lab work in Zero Trust and hybrid cloud infrastructure."</div>
-          <p>Tip: Lead with your <strong>current role</strong>, hit your <strong>biggest metric</strong> (95% FCR, 200+ users), then mention <strong>key tech</strong>. Stay under 45 seconds.</p>
+          <div class="qa-answer">"I'm an IT support professional with 2+ years of enterprise experience — currently at PwC supporting partners and executives in a Big 4 environment. Before that I ran IT support solo across a 200+ user, 9-site hospitality group with a 95% first-contact resolution rate. My strengths are Microsoft 365, Entra ID, Intune, and network troubleshooting, backed by active home lab work in Zero Trust and hybrid cloud. I'm looking to take that into a dedicated IT support role with room to grow toward cloud and sysadmin."</div>
+          <div class="short-tip">Under 45 seconds. Lead with current role, hit the big metric, end with where you're heading.</div>
+          <button class="mark-btn" onclick="markReviewed('qa-0', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-common">Most Asked</span></div>
-            <div class="qa-text">How do you prioritise tickets when you have multiple open at once?</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-item" id="qa-1">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Why are you leaving your current role?</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"I prioritise by business impact first. If a whole office is down, that's P1 and I escalate immediately. If a single user is fully blocked from working, that's P2 and I jump on it. Minor issues like cosmetic glitches get queued. I follow the SLA matrix — always respond within the window, never go silent on a ticket. I update users proactively; nobody should have to chase me."</div>
-          <p>Tip: Mention <strong>SLA awareness</strong>, give a real example of how you categorise, and end on <strong>communication</strong> — that's what separates good L1 from great L1.</p>
+          <div class="qa-answer">"PwC has been a great environment — supporting executives in a Big 4 setting is genuinely challenging. I'm looking to move into a role with more exposure to the full IT support stack. My current role is heavily AV-focused, which means I'm not getting the breadth of tickets, systems admin work, and cloud exposure I want at this stage of my career."</div>
+          <div class="short-tip">Never badmouth the employer. Frame it as running toward something, not escaping. This answer is honest and sounds mature.</div>
+          <button class="mark-btn" onclick="markReviewed('qa-1', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-tech">Technical</span></div>
-            <div class="qa-text">What is Active Directory and what do you use it for day-to-day?</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-section-label">Behavioural — Have Two STAR Stories Ready</div>
+
+      <div class="qa-item" id="qa-2">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">How do you prioritise tickets when you have multiple open?</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"Active Directory is Microsoft's centralised directory service that manages users, computers, and security policies across a network. Everything authenticates through it via the Domain Controller. Day-to-day I use <code>dsa.msc</code> to create accounts, reset passwords, unlock accounts, add users to security groups, and handle onboarding and offboarding. It's the most-touched tool in IT support."</div>
-          <p>Structure: Forest → Tree → Domain → OU. Know the <strong>AD daily tasks table</strong> in Reference cold.</p>
+          <div class="qa-answer">"Business impact first. Whole office down = P1, escalate immediately. Single user fully blocked = P2, I jump on it. Minor issues get queued. I follow the SLA matrix, update users proactively, and never let a ticket go silent. Nobody should have to chase me."</div>
+          <button class="mark-btn" onclick="markReviewed('qa-2', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-tech">Technical</span></div>
-            <div class="qa-text">What's the difference between a Distribution List and a Security Group?</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-item" id="qa-3">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-behav">STAR Story 1</span></div><div class="qa-text">Describe a difficult or high-pressure situation you handled.</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"A Distribution List is email-only — you send one email and it fans out to all members. It can't be used for permissions. A Security Group controls access — who can get into a shared drive, SharePoint site, or application. Security groups can also be mail-enabled, so you get both functions in one. I create and manage both in M365 Admin Centre."</div>
+          <div class="qa-answer">"At Platinum Hospitality, a network outage hit the POS systems during peak dinner service — revenue directly impacted across multiple sites. I immediately notified venue managers so they weren't in the dark, put them on 15-minute update cycles, and traced the fault to a failed switch. I pushed a remote config fix and had all sites restored within 40 minutes. The key was communication — stakeholders stayed calm because they knew it was being worked on."</div>
+          <div class="short-tip">This is STAR story 1. If asked a second behavioural question, don't repeat this scenario — use STAR story 2 below.</div>
+          <button class="mark-btn" onclick="markReviewed('qa-3', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-tech">Technical</span></div>
-            <div class="qa-text">Walk me through what you'd do if a user says their internet is slow.</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-item" id="qa-4">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-behav">STAR Story 2</span></div><div class="qa-text">Tell me about a time you had to learn something quickly.</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"First I ask: is it just them, or others on the same floor? That tells me if it's the device or the network. Then I run <code>ping 8.8.8.8 -t</code> to check for packet loss, and <code>ping google.com</code> — if 8.8.8.8 works but google.com doesn't, it's a DNS issue, not connectivity. Then <code>ipconfig /release</code> and <code>renew</code> to refresh the lease, <code>flushdns</code> to clear cache. I check their IP isn't an APIPA 169.254 address. If they're on WiFi I check the Meraki dashboard for AP status. If the whole office is affected, I contact the ISP and escalate to the network team."</div>
-          <p>This is the <strong>most common</strong> technical scenario question. Work through it methodically: isolate → diagnose → fix. See the full playbook in Troubleshooting.</p>
+          <div class="qa-answer">"When I moved into the IT Support Officer role at Platinum Hospitality, I had no prior Intune experience but the company needed an MDM rollout across 9 sites within weeks. I worked through Microsoft Learn and documentation, tested in a trial tenant, and within three weeks had Autopilot profiles configured and was deploying zero-touch devices. By the end of the rollout all sites were on compliant, managed endpoints. I can close skill gaps fast when the business needs it."</div>
+          <div class="short-tip">This answer also sells your self-teaching instinct, which is one of your strongest differentiators at this experience level.</div>
+          <button class="mark-btn" onclick="markReviewed('qa-4', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-tech">Technical</span></div>
-            <div class="qa-text">What do you do in Microsoft Intune day-to-day?</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-item" id="qa-5">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-behav">Behavioural</span></div><div class="qa-text">How do you handle a VIP or an angry user?</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"I use Intune for the device fleet. When a new staff member starts, I enroll their device and configure Windows Autopilot for zero-touch setup. I push required apps remotely — set as Required so they install without user action. If a device goes missing or stolen, I immediately do a remote wipe from the Intune portal to protect company data. I also use Conditional Access to make sure only compliant, enrolled devices can access company resources, and I regularly check the non-compliance report."</div>
+          <div class="qa-answer">"I stay professional — the frustration is about their work being blocked, not about me. I acknowledge it: 'I understand this is urgent, let me get onto it right now.' I give a clear timeframe, stay focused on the fix, and update them when it's resolved. At PwC I support senior partners regularly — speed and clear communication matter far more than technical jargon."</div>
+          <button class="mark-btn" onclick="markReviewed('qa-5', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-behav">Behavioural</span></div>
-            <div class="qa-text">Describe a time you handled a difficult situation or escalation.</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-item" id="qa-6">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">What do you do when you can't solve a problem?</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"At Platinum Hospitality, we had a network outage affecting the POS systems during a peak dinner service — revenue was directly impacted. I immediately acknowledged the issue to the venue managers so they knew it was being worked on, kept them on a 15-minute update cycle, and simultaneously traced the fault to a failed switch at one of the sites. I coordinated a remote config push and had the sites back online within 40 minutes. The key lesson: keep stakeholders informed the whole time, not just at the start and end."</div>
-          <p>Use the <strong>STAR format</strong>: Situation, Task, Action, Result. Always end with what you learned or the outcome.</p>
+          <div class="qa-answer">"I check the internal Knowledge Base first — chances are someone solved it before. If not, Microsoft docs or the specific error code. Still stuck, I ask a senior colleague. If we're approaching an SLA breach, I escalate — always with a full log: what I tried, error messages, what I ruled out. I never escalate blind and make someone else start from scratch."</div>
+          <button class="mark-btn" onclick="markReviewed('qa-6', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-behav">Behavioural</span></div>
-            <div class="qa-text">How do you handle a VIP or an angry user?</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-section-label">Technical</div>
+
+      <div class="qa-item" id="qa-7">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">What is Active Directory and what do you use it for day-to-day?</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"I stay professional regardless. The frustration is about their work being blocked, not about me personally. I acknowledge it — 'I understand this is urgent, let's get it sorted right now.' I give a clear timeframe, stay focused on the fix, and give them a heads-up when it's resolved. At PwC I support partners and executives regularly — speed and communication matter most in those situations."</div>
+          <div class="qa-answer">"Active Directory is Microsoft's centralised directory service — manages users, computers, and security policies across a network. Everything authenticates through the Domain Controller. Day-to-day I use dsa.msc to create accounts, reset passwords, unlock accounts, manage group memberships, and handle onboarding and offboarding. It's the most-touched tool in L1/L2 support."</div>
+          <p>Key structure: <strong>Forest → Tree → Domain → OU</strong></p>
+          <button class="mark-btn" onclick="markReviewed('qa-7', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-common">Most Asked</span></div>
-            <div class="qa-text">What do you do when you can't solve a problem?</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-item" id="qa-8">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">Walk me through troubleshooting slow internet for a user.</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"First I check the internal Knowledge Base — chances are someone solved it before. If not, I look at Microsoft docs or search the specific error code. If I'm still stuck, I ask a senior colleague. If we're approaching the SLA breach, I escalate — but I always escalate WITH a full log: what I tried, error messages, what I ruled out. I never escalate blind and make someone else start from zero."</div>
+          <div class="qa-answer">"First: is it just them or everyone on the floor? That tells me device vs network. I run ping 8.8.8.8 -t to check packet loss, then ping google.com — if 8.8.8.8 works but google.com fails, it's DNS. I run ipconfig /release, /renew, /flushdns. Check the IP isn't a 169.254 APIPA address. If WiFi, I check Meraki for the AP status. Whole office affected — ISP call and escalate to the network team."</div>
+          <button class="mark-btn" onclick="markReviewed('qa-8', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-common">Most Asked</span></div>
-            <div class="qa-text">Why should we hire you?</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-item" id="qa-9">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">What do you do in Microsoft Intune day-to-day?</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"I've already proven I can handle a high-volume, multi-site environment solo with strong resolution rates. I don't just fix tickets — I document fixes, build knowledge base articles, and leave things better than I found them. I understand that IT support isn't just about computers; it's about keeping people working and keeping them informed. And I'm genuinely building toward cloud and security specialisation, so I'm an investment that compounds."</div>
+          <div class="qa-answer">"I use Intune for device fleet management. When a new staff member starts I enroll their device and configure Windows Autopilot for zero-touch setup. I push required apps remotely — set as Required so they install without user action. If a device is reported stolen, I immediately do a remote wipe from the portal. I use Conditional Access to ensure only compliant, enrolled devices can reach company resources."</div>
+          <button class="mark-btn" onclick="markReviewed('qa-9', this)">Mark as reviewed</button>
         </div>
       </div>
 
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <div>
-            <div class="qa-label"><span class="tag tag-tech">Technical</span></div>
-            <div class="qa-text">What is Group Policy and how have you used it?</div>
-          </div>
-          <div class="qa-arrow">›</div>
-        </div>
+      <div class="qa-item" id="qa-10">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">Distribution List vs Security Group — what's the difference?</div></div><div class="qa-arrow">›</div></div>
         <div class="qa-body">
-          <div class="qa-answer">"Group Policy lets admins push configuration settings to all users and computers in a domain from one place — instead of configuring each machine manually. I create GPOs and link them to OUs. I've used it to enforce password complexity, map network drives, set desktop wallpapers, and push security configurations. When I need changes to apply immediately without waiting for the next policy refresh, I run <code>gpupdate /force</code> on the client machine."</div>
+          <div class="qa-answer">"A Distribution List is email-only — one email fans out to all members but it can't control access to anything. A Security Group controls permissions — shared drives, SharePoint sites, applications. Security groups can also be mail-enabled so you get both. I create and manage both in M365 Admin Centre."</div>
+          <button class="mark-btn" onclick="markReviewed('qa-10', this)">Mark as reviewed</button>
+        </div>
+      </div>
+
+      <div class="qa-item" id="qa-11">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">What is Group Policy and how have you used it?</div></div><div class="qa-arrow">›</div></div>
+        <div class="qa-body">
+          <div class="qa-answer">"Group Policy lets admins push configuration settings to all users and computers in a domain from one place — no manual per-machine work. I create GPOs and link them to OUs. I've used it for password complexity enforcement, mapping network drives, pushing security configs, and setting desktop wallpapers. When I need changes to apply immediately I run gpupdate /force on the client."</div>
+          <button class="mark-btn" onclick="markReviewed('qa-11', this)">Mark as reviewed</button>
+        </div>
+      </div>
+
+      <div class="qa-section-label">The Tricky Ones — Prepare These Carefully</div>
+
+      <div class="qa-item" id="qa-12">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-trap">Trap Question</span></div><div class="qa-text">What salary are you looking for?</div></div><div class="qa-arrow">›</div></div>
+        <div class="qa-body">
+          <div class="qa-answer">"Based on my enterprise experience across Microsoft 365, Intune, and multi-site support at PwC and Platinum Hospitality, I'm targeting $70,000–$80,000 base. That said, I'm open to discussion — if the role has genuine growth toward cloud or sysadmin, I'm flexible on the exact number."</div>
+          <div class="short-tip">Always give a range, never a single number. Anchor slightly above your real minimum. The second sentence signals you won't walk over money alone. Research the market rate for the specific role before the interview and adjust accordingly.</div>
+          <button class="mark-btn" onclick="markReviewed('qa-12', this)">Mark as reviewed</button>
+        </div>
+      </div>
+
+      <div class="qa-item" id="qa-13">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Why should we hire you?</div></div><div class="qa-arrow">›</div></div>
+        <div class="qa-body">
+          <div class="qa-answer">"I've proven I can handle a high-volume, multi-site environment solo with strong resolution rates. I don't just fix tickets — I document fixes, build knowledge base articles, and leave things better than I found them. I understand IT support isn't just about computers, it's about keeping people working. And I'm actively building toward cloud and security specialisation, so I'm an investment that compounds."</div>
+          <button class="mark-btn" onclick="markReviewed('qa-13', this)">Mark as reviewed</button>
+        </div>
+      </div>
+
+      <div class="qa-item" id="qa-14">
+        <div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-trap">Always Happens</span></div><div class="qa-text">Do you have any questions for us?</div></div><div class="qa-arrow">›</div></div>
+        <div class="qa-body">
+          <div class="qa-answer green">Never say "No, I think you've covered everything." Pick 2–3 from this list:</div>
+          <ul style="margin-top:10px;">
+            <li>"What does a typical first week look like for someone in this role?"</li>
+            <li>"What tools and ticketing systems does the team use day-to-day?"</li>
+            <li>"What does the progression path look like — is there a route from L1/L2 toward sysadmin or cloud?"</li>
+            <li>"What's the biggest challenge the IT team is working through right now?"</li>
+            <li>"How is performance measured — ticket volume, SLAs, or something else?"</li>
+          </ul>
+          <div class="short-tip">The progression question is the most important one for you. It signals ambition and helps you figure out if the role is actually worth taking.</div>
+          <button class="mark-btn" onclick="markReviewed('qa-14', this)">Mark as reviewed</button>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- ======== TROUBLESHOOTING ======== -->
+  <!-- TROUBLESHOOTING -->
   <div id="panel-ts" class="panel">
-    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Click any scenario to expand the step-by-step playbook. In interviews, walk through these out loud.</p>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Walk through these out loud in interviews — systematic thinkers stand out. Click to expand.</p>
     <div class="ts-grid">
 
       <div class="ts-card open">
-        <div class="ts-title" onclick="toggleTS(this)">
-          <span>🌐 Internet slow / not working</span>
-          <span class="ts-arrow">›</span>
-        </div>
+        <div class="ts-title" onclick="toggleTS(this)"><span>🌐 Internet slow / not working</span><span class="ts-arrow">›</span></div>
         <div class="ts-body">
           <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Isolate scope.</strong> One user or whole office? One = device. Whole = upstream.</div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-text">Run <code>ping 8.8.8.8 -t</code> — check for packet loss in the output.</div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-text">Run <code>ping google.com</code> — if 8.8.8.8 works but google.com fails → DNS issue.</div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-text">Check IP with <code>ipconfig /all</code>. APIPA <code>169.254.x.x</code> = DHCP failed.</div></div>
-          <div class="step"><div class="step-num">5</div><div class="step-text">Run <code>ipconfig /release</code> → <code>ipconfig /renew</code> → <code>ipconfig /flushdns</code>.</div></div>
-          <div class="step"><div class="step-num">6</div><div class="step-text">Restart docking station. Try different cable.</div></div>
-          <div class="step"><div class="step-num">7</div><div class="step-text">WiFi: check Meraki dashboard — is the AP online? Is the user on corporate vs guest WiFi?</div></div>
-          <div class="tip">Whole office affected → contact ISP + escalate to network team immediately.</div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Run <code>ping 8.8.8.8 -t</code> — look for packet loss in the output.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Run <code>ping google.com</code> — 8.8.8.8 works but this fails? DNS issue.</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text"><code>ipconfig /all</code> — is the IP a 169.254.x.x APIPA address? DHCP failed.</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text">Run <code>ipconfig /release</code> → <code>/renew</code> → <code>/flushdns</code>.</div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-text">Restart docking station. Try a different cable.</div></div>
+          <div class="step"><div class="step-num">7</div><div class="step-text">WiFi: check Meraki — is the AP online? Corporate vs guest network?</div></div>
+          <div class="tip">Whole office affected → contact ISP and escalate to network team immediately.</div>
         </div>
       </div>
 
       <div class="ts-card">
-        <div class="ts-title" onclick="toggleTS(this)">
-          <span>📧 Outlook not syncing</span>
-          <span class="ts-arrow">›</span>
-        </div>
+        <div class="ts-title" onclick="toggleTS(this)"><span>🔒 Can't log in / password reset</span><span class="ts-arrow">›</span></div>
         <div class="ts-body">
-          <div class="step"><div class="step-num">1</div><div class="step-text">Check status bar (bottom-right of Outlook). Should say "Connected to Exchange".</div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-text">Test at <strong>office.com</strong> → OWA. If it works there, problem is the local client.</div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-text">Launch Outlook Safe Mode: <code>Ctrl + click</code> the icon. If it works → add-in conflict.</div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-text">Repair Office: Control Panel → Programs → Microsoft 365 → Repair (Quick first).</div></div>
-          <div class="step"><div class="step-num">5</div><div class="step-text">Rebuild OST: close Outlook → delete <code>.ost</code> file in <code>%localappdata%\Microsoft\Outlook\</code> → reopen.</div></div>
-          <div class="step"><div class="step-num">6</div><div class="step-text">New profile: Control Panel → Mail → Show Profiles → Add new → set as default.</div></div>
-          <div class="tip">Always check M365 Service Health first — if Exchange is down, none of this matters.</div>
+          <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Verify identity first</strong> — confirm full name, employee ID, or manager before making changes.</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Check if locked: <code>dsa.msc</code> → user → Properties → Account tab → Unlock account.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Reset password → right-click → Reset Password → tick "User must change at next logon".</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Check Event Viewer — which machine is triggering the repeated lockout?</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text">Ask: does the user have Outlook or Teams on their phone using the old password? That keeps re-locking the account.</div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-text">Advise them to update saved credentials on all devices after the reset.</div></div>
+          <div class="tip">Most common cause: a phone with a saved old password hammering the account. Always ask about mobile devices.</div>
         </div>
       </div>
 
       <div class="ts-card">
-        <div class="ts-title" onclick="toggleTS(this)">
-          <span>🖨 Printer not working</span>
-          <span class="ts-arrow">›</span>
-        </div>
+        <div class="ts-title" onclick="toggleTS(this)"><span>📧 Outlook not syncing</span><span class="ts-arrow">›</span></div>
         <div class="ts-body">
-          <div class="step"><div class="step-num">1</div><div class="step-text">Isolate: just this user, or everyone? Just this printer, or all printers?</div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-text">Physical check: is printer on, no error lights, paper loaded, not showing offline?</div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-text">Ping printer IP: <code>ping [printer IP]</code> — can't reach it? Network/IP issue.</div></div>
+          <div class="step"><div class="step-num">1</div><div class="step-text">Check status bar (bottom-right of Outlook) — "Connected to Exchange"?</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Test at <strong>office.com → OWA</strong>. Works there? Local client problem.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Safe Mode: <code>Ctrl + click</code> the icon. Works? Add-in conflict — disable them all in File → Options → Add-ins.</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Repair: Control Panel → Programs → Microsoft 365 → Quick Repair.</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text">Rebuild OST: close Outlook → delete <code>.ost</code> in <code>%localappdata%\Microsoft\Outlook\</code> → reopen.</div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-text">New profile: Control Panel → Mail → Show Profiles → Add → set as default.</div></div>
+          <div class="tip">Check M365 Service Health first — if Exchange is having an outage, none of these steps matter.</div>
+        </div>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-title" onclick="toggleTS(this)"><span>🖨 Printer not working</span><span class="ts-arrow">›</span></div>
+        <div class="ts-body">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Isolate: just this user, or everyone? Just this printer, or all?</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Physical: on, no error lights, paper loaded, not showing offline?</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Ping the printer IP — can't reach it? Network or static IP issue.</div></div>
           <div class="step"><div class="step-num">4</div><div class="step-text">Restart Print Spooler: <code>services.msc</code> → Print Spooler → Restart.</div></div>
-          <div class="step"><div class="step-num">5</div><div class="step-text">Remap printer: Win+R → <code>\\server\printername</code></div></div>
-          <div class="step"><div class="step-num">6</div><div class="step-text">If stuck queue: stop Spooler → delete files in <code>C:\Windows\System32\spool\PRINTERS</code> → restart Spooler.</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text">Remap: Win+R → <code>\\server\printername</code></div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-text">Stuck queue: stop Spooler → delete files in <code>C:\Windows\System32\spool\PRINTERS</code> → restart Spooler.</div></div>
         </div>
       </div>
 
       <div class="ts-card">
-        <div class="ts-title" onclick="toggleTS(this)">
-          <span>🔒 Account locked out</span>
-          <span class="ts-arrow">›</span>
-        </div>
+        <div class="ts-title" onclick="toggleTS(this)"><span>🎧 Teams / Audio not working</span><span class="ts-arrow">›</span></div>
         <div class="ts-body">
-          <div class="step"><div class="step-num">1</div><div class="step-text"><code>dsa.msc</code> → find user → Properties → Account tab → tick "Unlock account".</div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-text">Check Event Viewer for source of lockout — which machine triggered it?</div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-text">Ask: do you have Outlook or Teams on your phone with old password saved? That can keep re-locking it.</div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-text">Advise user to update saved credentials on all devices after password reset.</div></div>
-          <div class="tip">Most common cause: saved credentials on phone still using the old password.</div>
-        </div>
-      </div>
-
-      <div class="ts-card">
-        <div class="ts-title" onclick="toggleTS(this)">
-          <span>🎧 Teams / Audio not working</span>
-          <span class="ts-arrow">›</span>
-        </div>
-        <div class="ts-body">
-          <div class="step"><div class="step-num">1</div><div class="step-text">Check Windows Sound Settings → correct output device selected (not laptop speakers).</div></div>
+          <div class="step"><div class="step-num">1</div><div class="step-text">Windows Sound Settings — correct output device? (Not laptop speakers.)</div></div>
           <div class="step"><div class="step-num">2</div><div class="step-text">Settings → Privacy → Microphone → toggle ON for Teams.</div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-text">In Teams: ··· → Settings → Devices → select correct mic/speaker.</div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-text">Clear Teams cache: <code>%appdata%\Microsoft\Teams</code> → delete contents → restart Teams.</div></div>
-          <div class="step"><div class="step-num">5</div><div class="step-text">Test on <strong>teams.microsoft.com</strong> (web) — isolates desktop client vs account.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Teams: ··· → Settings → Devices → select correct mic and speaker.</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Clear cache: <code>%appdata%\Microsoft\Teams</code> → delete contents → restart Teams.</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text">Test at <strong>teams.microsoft.com</strong> (web) — isolates desktop app vs account issue.</div></div>
         </div>
       </div>
 
       <div class="ts-card">
-        <div class="ts-title" onclick="toggleTS(this)">
-          <span>🔑 VPN not connecting</span>
-          <span class="ts-arrow">›</span>
-        </div>
+        <div class="ts-title" onclick="toggleTS(this)"><span>🔑 VPN not connecting</span><span class="ts-arrow">›</span></div>
         <div class="ts-body">
-          <div class="step"><div class="step-num">1</div><div class="step-text">Confirm user has working internet <em>without</em> VPN first.</div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-text">Disconnect → reconnect. Check VPN client is up to date.</div></div>
+          <div class="step"><div class="step-num">1</div><div class="step-text">Confirm user has working internet without VPN first.</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Disconnect → reconnect. VPN client up to date?</div></div>
           <div class="step"><div class="step-num">3</div><div class="step-text">Check credentials — has their password expired?</div></div>
           <div class="step"><div class="step-num">4</div><div class="step-text">Reinstall the VPN client.</div></div>
           <div class="step"><div class="step-num">5</div><div class="step-text">Test from mobile hotspot — rules out local network blocking VPN ports.</div></div>
-          <div class="step"><div class="step-num">6</div><div class="step-text">Escalate with: error message, screenshots, steps tried.</div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-text">Escalate with: error message, screenshot, steps tried.</div></div>
         </div>
       </div>
 
       <div class="ts-card">
-        <div class="ts-title" onclick="toggleTS(this)">
-          <span>💻 Laptop reported stolen</span>
-          <span class="ts-arrow">›</span>
-        </div>
+        <div class="ts-title" onclick="toggleTS(this)"><span>💻 Laptop reported stolen</span><span class="ts-arrow">›</span></div>
         <div class="ts-body">
-          <div class="step"><div class="step-num">1</div><div class="step-text">Confirm genuine theft with manager (not just misplaced).</div></div>
+          <div class="step"><div class="step-num">1</div><div class="step-text">Confirm genuine theft with manager — not just misplaced.</div></div>
           <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Intune → Devices → Remote Wipe.</strong> Removes all company data immediately.</div></div>
           <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Entra ID → Revoke all sign-in sessions</strong> for the user.</div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-text">Disable the user's AD account if credential compromise is suspected.</div></div>
-          <div class="step"><div class="step-num">5</div><div class="step-text">Log full incident in ticketing system with timestamps.</div></div>
-          <div class="step"><div class="step-num">6</div><div class="step-text">Report to building security / police. Begin replacement hardware process.</div></div>
-          <div class="warn">Never skip the Remote Wipe step — this is the most critical action and must happen immediately.</div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Disable AD account if credential compromise is suspected.</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text">Log full incident with timestamps. Report to security / police.</div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-text">Begin replacement hardware process.</div></div>
+          <div class="warn">Remote Wipe must happen immediately — never delay this step.</div>
         </div>
       </div>
 
       <div class="ts-card">
-        <div class="ts-title" onclick="toggleTS(this)">
-          <span>⚠️ "Trust relationship failed"</span>
-          <span class="ts-arrow">›</span>
-        </div>
+        <div class="ts-title" onclick="toggleTS(this)"><span>⚠️ "Trust relationship failed"</span><span class="ts-arrow">›</span></div>
         <div class="ts-body">
-          <p style="font-size:13px;margin-bottom:10px;color:var(--muted);">Machine account password out of sync with the Domain Controller.</p>
-          <div class="step"><div class="step-num">1</div><div class="step-text">Log in as <strong>local admin</strong> (not domain account).</div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-text">PowerShell fix: <code>Test-ComputerSecureChannel -Repair -Credential (Get-Credential)</code></div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-text">Classic method: <code>sysdm.cpl</code> → remove from domain → rejoin domain → restart.</div></div>
-          <div class="tip">PowerShell method is faster — no full disjoin/rejoin needed on modern Windows.</div>
+          <p style="font-size:13px;margin-bottom:10px;color:var(--muted);">Machine account password is out of sync with the Domain Controller.</p>
+          <div class="step"><div class="step-num">1</div><div class="step-text">Log in as <strong>local admin</strong> — not the domain account.</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">PowerShell: <code>Test-ComputerSecureChannel -Repair -Credential (Get-Credential)</code></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Classic: <code>sysdm.cpl</code> → remove from domain → rejoin → restart.</div></div>
+          <div class="tip">PowerShell is faster — no full disjoin/rejoin needed on modern Windows.</div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- ======== REFERENCE ======== -->
+  <!-- REFERENCE -->
   <div id="panel-ref" class="panel">
 
     <div class="ref-section">
@@ -552,13 +513,28 @@
     </div>
 
     <div class="ref-section">
+      <div class="ref-title">JAMF — Apple Device Management</div>
+      <table class="ref-table plain-table">
+        <tr><th>Topic</th><th>Detail</th></tr>
+        <tr><td>What JAMF manages</td><td>Apple devices only — Mac, iPhone, iPad (Intune handles Windows)</td></tr>
+        <tr><td>Enroll a Mac</td><td>JAMF Pro → Computers → Enroll, or zero-touch via ADE (Apple Business Manager)</td></tr>
+        <tr><td>Push a policy or app</td><td>Policies → New → scope to device/group → trigger on enrollment or schedule</td></tr>
+        <tr><td>Remote wipe</td><td>Computers → find device → Management → Wipe Computer</td></tr>
+        <tr><td>Remote lock</td><td>Computers → Management → Lock → set a 6-digit PIN</td></tr>
+        <tr><td>Check device inventory</td><td>Computers → All Computers → filter by OS, department, compliance</td></tr>
+        <tr><td>Smart Group</td><td>Dynamic group — auto-includes devices matching criteria (like Entra dynamic groups)</td></tr>
+        <tr><td>JAMF vs Intune</td><td>Same concept, different platform. JAMF = Apple. Intune = Windows/cross-platform.</td></tr>
+      </table>
+    </div>
+
+    <div class="ref-section">
       <div class="ref-title">CMD / PowerShell Cheat Sheet</div>
       <table class="ref-table cmd-table">
         <tr><th>Command</th><th>Use it for</th></tr>
         <tr><td>ipconfig /all</td><td>Full network info — IP, gateway, DNS, MAC, DHCP server</td></tr>
         <tr><td>ipconfig /release + /renew</td><td>Drop and request a new DHCP lease</td></tr>
         <tr><td>ipconfig /flushdns</td><td>Clear local DNS cache</td></tr>
-        <tr><td>ping 8.8.8.8 -t</td><td>Continuous ping — check for packet loss (drops = unstable)</td></tr>
+        <tr><td>ping 8.8.8.8 -t</td><td>Continuous ping — check for packet loss</td></tr>
         <tr><td>tracert google.com</td><td>Find which hop (router) is failing</td></tr>
         <tr><td>nslookup google.com</td><td>Check what IP DNS returns for a name</td></tr>
         <tr><td>gpupdate /force</td><td>Apply Group Policy immediately</td></tr>
@@ -566,7 +542,7 @@
         <tr><td>whoami /groups</td><td>See all security groups the current user is in</td></tr>
         <tr><td>sfc /scannow</td><td>Scan and repair corrupted Windows system files</td></tr>
         <tr><td>netstat -an</td><td>See all active network connections and listening ports</td></tr>
-        <tr><td>arp -a</td><td>Show ARP table (IP → MAC address mappings)</td></tr>
+        <tr><td>arp -a</td><td>Show ARP table (IP to MAC address mappings)</td></tr>
       </table>
     </div>
 
@@ -579,8 +555,8 @@
         <tr><td>25</td><td>SMTP</td><td>Outgoing mail — server to server</td></tr>
         <tr><td>53</td><td>DNS</td><td>Name resolution</td></tr>
         <tr><td>80</td><td>HTTP</td><td>Web (unencrypted)</td></tr>
-        <tr><td>110</td><td>POP3</td><td>Incoming mail (downloads to local)</td></tr>
-        <tr><td>143</td><td>IMAP</td><td>Incoming mail (server sync)</td></tr>
+        <tr><td>110</td><td>POP3</td><td>Incoming mail — downloads to local</td></tr>
+        <tr><td>143</td><td>IMAP</td><td>Incoming mail — server sync</td></tr>
         <tr><td>389</td><td>LDAP</td><td>Directory services (Active Directory)</td></tr>
         <tr><td>443</td><td>HTTPS</td><td>Secure web</td></tr>
         <tr><td>587</td><td>SMTP/TLS</td><td>Outgoing mail — client to server (secure)</td></tr>
@@ -593,11 +569,11 @@
       <table class="ref-table cmd-table">
         <tr><th>Command</th><th>Opens</th></tr>
         <tr><td>sysdm.cpl</td><td>System Properties — domain join, PC rename</td></tr>
-        <tr><td>ncpa.cpl</td><td>Network Connections — set static IP, toggle NIC</td></tr>
-        <tr><td>appwiz.cpl</td><td>Programs & Features — uninstall / repair Office</td></tr>
+        <tr><td>ncpa.cpl</td><td>Network Connections — static IP, toggle NIC</td></tr>
+        <tr><td>appwiz.cpl</td><td>Programs &amp; Features — uninstall / repair Office</td></tr>
         <tr><td>services.msc</td><td>Services — restart Print Spooler, Windows Update</td></tr>
         <tr><td>eventvwr.msc</td><td>Event Viewer — error codes, crash logs</td></tr>
-        <tr><td>dsa.msc</td><td>AD Users & Computers — manage domain users</td></tr>
+        <tr><td>dsa.msc</td><td>AD Users &amp; Computers — manage domain users</td></tr>
         <tr><td>gpmc.msc</td><td>Group Policy Management Console</td></tr>
         <tr><td>diskmgmt.msc</td><td>Disk Management — partition drives</td></tr>
         <tr><td>compmgmt.msc</td><td>Computer Management — local users, disk, services</td></tr>
@@ -607,7 +583,7 @@
     <div class="ref-section">
       <div class="ref-title">OSI Model — Practical Reference</div>
       <table class="ref-table">
-        <tr><th>Layer</th><th>Name</th><th>Devices / Protocols</th><th>Real-world example</th></tr>
+        <tr><th>Layer</th><th>Name</th><th>Protocols / Devices</th><th>Real-world example</th></tr>
         <tr><td>7</td><td>Application</td><td>HTTP, DNS, SMTP, FTP</td><td>Chrome, Outlook</td></tr>
         <tr><td>6</td><td>Presentation</td><td>SSL/TLS, encryption</td><td>HTTPS certificate</td></tr>
         <tr><td>5</td><td>Session</td><td>NetBIOS, RPC</td><td>Starting a Remote Desktop session</td></tr>
@@ -616,26 +592,51 @@
         <tr><td>2</td><td>Data Link</td><td>Ethernet, MAC, switches</td><td>Switch forwarding by MAC address</td></tr>
         <tr><td>1</td><td>Physical</td><td>Cat5/Cat6, NIC, hubs</td><td>The cable in the wall</td></tr>
       </table>
-      <p style="font-size:12px;color:var(--muted);margin-top:8px;">Mnemonic (bottom→top): <strong>P</strong>lease <strong>D</strong>o <strong>N</strong>ot <strong>T</strong>hrow <strong>S</strong>ausage <strong>P</strong>izza <strong>A</strong>way</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">Mnemonic (bottom up): <strong>P</strong>lease <strong>D</strong>o <strong>N</strong>ot <strong>T</strong>hrow <strong>S</strong>ausage <strong>P</strong>izza <strong>A</strong>way</p>
     </div>
 
   </div>
-
 </div>
 
 <script>
-function switchTab(name) {
+const TOTAL_QA = 15;
+function switchTab(name, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.getElementById('panel-' + name).classList.add('active');
-  event.target.classList.add('active');
+  btn.classList.add('active');
 }
-function toggleQA(el) {
-  el.closest('.qa-item').classList.toggle('open');
+function toggleQA(el) { el.closest('.qa-item').classList.toggle('open'); }
+function toggleTS(el) { el.closest('.ts-card').classList.toggle('open'); }
+function markReviewed(id, btn) {
+  const item = document.getElementById(id);
+  const reviewed = item.classList.toggle('reviewed');
+  const stored = JSON.parse(localStorage.getItem('itrev') || '[]');
+  if (reviewed) { btn.textContent = 'Reviewed'; if (!stored.includes(id)) stored.push(id); }
+  else { btn.textContent = 'Mark as reviewed'; const i = stored.indexOf(id); if (i > -1) stored.splice(i, 1); }
+  localStorage.setItem('itrev', JSON.stringify(stored));
+  updateProgress();
 }
-function toggleTS(el) {
-  el.closest('.ts-card').classList.toggle('open');
+function updateProgress() {
+  const stored = JSON.parse(localStorage.getItem('itrev') || '[]');
+  const c = stored.length;
+  document.getElementById('prog-fill').style.width = Math.round((c / TOTAL_QA) * 100) + '%';
+  document.getElementById('prog-count').textContent = c + ' / ' + TOTAL_QA;
 }
+function resetProgress() {
+  localStorage.removeItem('itrev');
+  document.querySelectorAll('.qa-item').forEach(el => el.classList.remove('reviewed'));
+  document.querySelectorAll('.mark-btn').forEach(btn => btn.textContent = 'Mark as reviewed');
+  updateProgress();
+}
+window.addEventListener('load', () => {
+  const stored = JSON.parse(localStorage.getItem('itrev') || '[]');
+  stored.forEach(id => {
+    const item = document.getElementById(id);
+    if (item) { item.classList.add('reviewed'); const btn = item.querySelector('.mark-btn'); if (btn) btn.textContent = 'Reviewed'; }
+  });
+  updateProgress();
+});
 </script>
 </body>
 </html>
