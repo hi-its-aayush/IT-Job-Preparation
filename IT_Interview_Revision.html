@@ -6,14 +6,14 @@
 <title>IT Support Interview — Comprehensive Revision</title>
 <style>
 :root {
---bg: #f8f7f4; --surface: #ffffff; --border: #e5e2db; --text: #1a1a1a; --muted: #6b6860;
---accent: #185FA5; --accent-bg: #E6F1FB; --accent-text: #0C447C;
---green: #3B6D11; --green-bg: #EAF3DE; --green-text: #27500A;
---amber: #854F0B; --amber-bg: #FAEEDA; --amber-text: #633806;
---red: #A32D2D; --red-bg: #FCEBEB; --red-text: #791F1F;
---purple: #534AB7; --purple-bg: #EEEDFE; --purple-text: #3C3489;
---teal: #0F6E56; --teal-bg: #E1F5EE; --teal-text: #085041;
---radius: 10px; --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --bg: #f8f7f4; --surface: #ffffff; --border: #e5e2db; --text: #1a1a1a; --muted: #6b6860;
+  --accent: #185FA5; --accent-bg: #E6F1FB; --accent-text: #0C447C;
+  --green: #3B6D11; --green-bg: #EAF3DE; --green-text: #27500A;
+  --amber: #854F0B; --amber-bg: #FAEEDA; --amber-text: #633806;
+  --red: #A32D2D; --red-bg: #FCEBEB; --red-text: #791F1F;
+  --purple: #534AB7; --purple-bg: #EEEDFE; --purple-text: #3C3489;
+  --teal: #0F6E56; --teal-bg: #E1F5EE; --teal-text: #085041;
+  --radius: 10px; --shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
@@ -39,21 +39,25 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--bg)
 .tab:hover:not(.active) { color: var(--text); }
 .panel { display: none; }
 .panel.active { display: block; }
+
+/* ── Rapid Fire ── */
 .rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
 @media (max-width: 600px) { .rf-grid { grid-template-columns: 1fr; } }
 .rf-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .rf-header { padding: 10px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
-.rf-header.blue { background: var(--accent-bg); color: var(--accent-text); }
-.rf-header.green { background: var(--green-bg); color: var(--green-text); }
-.rf-header.amber { background: var(--amber-bg); color: var(--amber-text); }
-.rf-header.purple { background: var(--purple-bg); color: var(--purple-text); }
-.rf-header.red { background: var(--red-bg); color: var(--red-text); }
-.rf-header.teal { background: var(--teal-bg); color: var(--teal-text); }
+.rf-header.blue  { background: var(--accent-bg); color: var(--accent-text); }
+.rf-header.green { background: var(--green-bg);  color: var(--green-text); }
+.rf-header.amber { background: var(--amber-bg);  color: var(--amber-text); }
+.rf-header.purple{ background: var(--purple-bg); color: var(--purple-text); }
+.rf-header.red   { background: var(--red-bg);    color: var(--red-text); }
+.rf-header.teal  { background: var(--teal-bg);   color: var(--teal-text); }
 .rf-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; border-bottom: 1px solid var(--border); gap: 12px; }
 .rf-row:last-child { border-bottom: none; }
 .rf-q { color: var(--muted); font-size: 13px; flex: 1; }
 .rf-a { font-weight: 600; font-size: 13px; text-align: right; }
 .rf-a code { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: monospace; font-size: 12px; font-weight: 400; }
+
+/* ── Interview Q&A ── */
 .qa-section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
 .qa-section-label:first-child { margin-top: 0; }
 .qa-list { display: flex; flex-direction: column; gap: 10px; }
@@ -75,14 +79,16 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--bg)
 .qa-body ul { margin: 8px 0 0 16px; font-size: 13px; color: var(--muted); }
 .qa-body ul li { margin-bottom: 4px; }
 .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
-.tag-common { background: var(--red-bg); color: var(--red-text); }
-.tag-tech { background: var(--accent-bg); color: var(--accent-text); }
-.tag-behav { background: var(--amber-bg); color: var(--amber-text); }
-.tag-trap { background: var(--purple-bg); color: var(--purple-text); }
+.tag-common { background: var(--red-bg);    color: var(--red-text); }
+.tag-tech   { background: var(--accent-bg); color: var(--accent-text); }
+.tag-behav  { background: var(--amber-bg);  color: var(--amber-text); }
+.tag-trap   { background: var(--purple-bg); color: var(--purple-text); }
 .mark-btn { margin-top: 12px; font-size: 12px; padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; color: var(--muted); }
 .mark-btn:hover { border-color: var(--green); color: var(--green); }
 .qa-item.reviewed .mark-btn { background: var(--green-bg); border-color: var(--green); color: var(--green-text); }
 .short-tip { background: var(--amber-bg); border-left: 3px solid var(--amber); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 8px; font-size: 12px; color: var(--amber-text); }
+
+/* ── Troubleshooting ── */
 .ts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
 @media (max-width: 640px) { .ts-grid { grid-template-columns: 1fr; } }
 .ts-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
@@ -96,32 +102,10 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--bg)
 .step-num { background: var(--accent-bg); color: var(--accent-text); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 .step-text { font-size: 13px; line-height: 1.6; }
 .step-text code { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; font-family: monospace; font-size: 12px; }
-.tip { background: var(--green-bg); border-left: 3px solid var(--green); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; font-size: 12px; color: var(--green-text); }
+.tip  { background: var(--green-bg); border-left: 3px solid var(--green); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; font-size: 12px; color: var(--green-text); }
 .warn { background: var(--amber-bg); border-left: 3px solid var(--amber); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; font-size: 12px; color: var(--amber-text); }
-.timeline { position: relative; padding: 20px 0; }
-.timeline-event { display: flex; gap: 16px; margin-bottom: 20px; position: relative; }
-.timeline-time { font-weight: 700; color: var(--accent); min-width: 80px; font-size: 13px; }
-.timeline-dot { width: 12px; height: 12px; background: var(--accent); border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
-.timeline-content { background: var(--accent-bg); border-left: 3px solid var(--accent); padding: 12px 14px; border-radius: 0 6px 6px 0; flex: 1; font-size: 13px; }
-.timeline-content strong { color: var(--accent-text); }
-.timeline-content p { margin-top: 4px; color: var(--text); }
-.checklist { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.checklist-phase { border-bottom: 1px solid var(--border); }
-.checklist-phase:last-child { border-bottom: none; }
-.checklist-phase-title { padding: 12px 14px; background: var(--bg); font-weight: 600; font-size: 13px; color: var(--text); }
-.checklist-items { padding: 12px 14px; }
-.checklist-item { display: flex; gap: 10px; margin-bottom: 10px; font-size: 13px; align-items: flex-start; }
-.checklist-item:last-child { margin-bottom: 0; }
-.checklist-check { color: var(--green); font-weight: 700; flex-shrink: 0; }
-.checklist-task { color: var(--muted); }
-.tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-@media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
-.tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px; }
-.tool-name { font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 4px; }
-.tool-category { font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-.tool-desc { font-size: 13px; color: var(--muted); margin-bottom: 10px; line-height: 1.6; }
-.tool-uses { font-size: 12px; color: var(--text); }
-.tool-uses li { margin-bottom: 6px; margin-left: 18px; }
+
+/* ── Reference ── */
 .ref-section { margin-bottom: 20px; }
 .ref-title { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .ref-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); }
@@ -129,810 +113,1268 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--bg)
 .ref-table td { padding: 8px 12px; font-size: 13px; border-bottom: 1px solid var(--border); }
 .ref-table tr:last-child td { border-bottom: none; }
 .ref-table td:first-child { font-family: monospace; font-size: 12px; color: var(--accent); }
-.p1 { color: var(--red); font-weight: 700; }
-.p2 { color: var(--amber); font-weight: 600; }
+.cmd-table   td:first-child { font-family: monospace; font-size: 12px; color: var(--purple); }
+.port-table  td:first-child { font-weight: 700; color: var(--text); font-family: monospace; }
+.sla-table   td:first-child { font-family: inherit; font-weight: 500; }
+.plain-table td:first-child { font-family: inherit; color: var(--text); font-size: 13px; }
+.p1 { color: var(--red);    font-weight: 700; }
+.p2 { color: var(--amber);  font-weight: 600; }
 .p3 { color: var(--accent); font-weight: 600; }
 .p4 { color: var(--green); }
+
+/* ── Day in a Life ── */
+.timeline { position: relative; padding: 4px 0; }
+.timeline-event { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
+.timeline-left { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 80px; }
+.timeline-time { font-weight: 700; color: var(--accent); font-size: 12px; white-space: nowrap; }
+.timeline-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+.timeline-content { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 12px 14px; flex: 1; box-shadow: var(--shadow); }
+.timeline-content strong { font-size: 13px; font-weight: 700; color: var(--text); display: block; margin-bottom: 4px; }
+.timeline-content p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── Onboarding / Offboarding ── */
+.ob-section-title { font-size: 14px; font-weight: 700; color: var(--text); margin: 24px 0 12px; }
+.ob-section-title:first-child { margin-top: 0; }
+.checklist-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.checklist-phase { border-bottom: 1px solid var(--border); }
+.checklist-phase:last-child { border-bottom: none; }
+.checklist-phase-title { padding: 10px 14px; background: var(--bg); font-weight: 600; font-size: 12px; color: var(--text); border-bottom: 1px solid var(--border); }
+.checklist-items { padding: 10px 14px; }
+.checklist-item { display: flex; gap: 10px; margin-bottom: 8px; font-size: 13px; align-items: flex-start; }
+.checklist-item:last-child { margin-bottom: 0; }
+.check-icon { color: var(--green); font-weight: 700; flex-shrink: 0; line-height: 1.6; }
+.check-text { color: var(--muted); line-height: 1.6; }
+.check-text strong { color: var(--text); }
+
+/* ── Tools & Use Cases ── */
+.tool-section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); margin: 24px 0 12px; }
+.tool-section-title:first-child { margin-top: 0; }
+.tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+@media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
+.tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px; }
+.tool-category { font-size: 10px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.tool-name { font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 6px; }
+.tool-desc { font-size: 12px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.tool-uses { font-size: 12px; }
+.tool-uses strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 4px; }
+.tool-uses ul { margin-left: 16px; }
+.tool-uses ul li { color: var(--muted); margin-bottom: 4px; line-height: 1.5; }
 </style>
 </head>
 <body>
 <div class="page">
+
+<!-- HEADER -->
 <div class="header">
-<h1>IT Support Interview — Comprehensive Revision</h1>
-<p>Aayush Acharya &nbsp;·&nbsp; Level 1/2 IT Support &nbsp;·&nbsp; Sydney, NSW</p>
-<div class="badges">
-<span class="badge badge-blue">Microsoft 365</span>
-<span class="badge badge-blue">Active Directory</span>
-<span class="badge badge-blue">Intune / MDM</span>
-<span class="badge badge-green">Networking</span>
-<span class="badge badge-amber">ServiceNow</span>
-<span class="badge badge-amber">Troubleshooting</span>
-</div>
+  <h1>IT Support Interview — Comprehensive Revision</h1>
+  <p>Aayush Acharya &nbsp;·&nbsp; Level 1/2 IT Support &nbsp;·&nbsp; Sydney, NSW</p>
+  <div class="badges">
+    <span class="badge badge-blue">Microsoft 365</span>
+    <span class="badge badge-blue">Active Directory</span>
+    <span class="badge badge-blue">Intune / MDM</span>
+    <span class="badge badge-green">Networking</span>
+    <span class="badge badge-green">Cisco Meraki</span>
+    <span class="badge badge-amber">ServiceNow</span>
+    <span class="badge badge-amber">Troubleshooting</span>
+  </div>
 </div>
 
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <span class="progress-label">Q&amp;A reviewed</span>
+  <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-fill" style="width:0%"></div></div>
+  <span class="progress-count" id="prog-count">0 / 15</span>
+  <button class="reset-btn" onclick="resetProgress()">Reset</button>
+</div>
+
+<!-- TABS -->
 <div class="tabs">
-<button class="tab active" onclick="switchTab('rapid', this)">⚡ Rapid Fire</button>
-<button class="tab" onclick="switchTab('qa', this)">🔥 Interview Q&A</button>
-<button class="tab" onclick="switchTab('day', this)">📅 Day in a Life</button>
-<button class="tab" onclick="switchTab('onboard', this)">👥 Onboarding/Offboarding</button>
-<button class="tab" onclick="switchTab('tools', this)">🛠 Tools & Use Cases</button>
-<button class="tab" onclick="switchTab('ts', this)">🛠️ Troubleshooting</button>
-<button class="tab" onclick="switchTab('ref', this)">📋 Reference</button>
+  <button class="tab active" onclick="switchTab('rapid', this)">⚡ Rapid Fire</button>
+  <button class="tab" onclick="switchTab('qa', this)">🔥 Interview Q&amp;A</button>
+  <button class="tab" onclick="switchTab('day', this)">📅 Day in a Life</button>
+  <button class="tab" onclick="switchTab('onboard', this)">👥 Onboarding/Offboarding</button>
+  <button class="tab" onclick="switchTab('tools', this)">🧰 Tools &amp; Use Cases</button>
+  <button class="tab" onclick="switchTab('ts', this)">🛠 Troubleshooting</button>
+  <button class="tab" onclick="switchTab('ref', this)">📋 Reference</button>
 </div>
 
-<!-- RAPID FIRE -->
+<!-- ═══════════════════════════════════════════════════
+     PANEL: RAPID FIRE
+═══════════════════════════════════════════════════ -->
 <div id="panel-rapid" class="panel active">
-<p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Every answer should take under 10 seconds. Slow on any of these? That's your weak spot.</p>
-<div class="rf-grid">
-<div class="rf-card">
-<div class="rf-header blue">Ports — Know These Cold</div>
-<div class="rf-row"><span class="rf-q">DNS</span><span class="rf-a">53</span></div>
-<div class="rf-row"><span class="rf-q">HTTP / HTTPS</span><span class="rf-a">80 / 443</span></div>
-<div class="rf-row"><span class="rf-q">SMTP (server–server)</span><span class="rf-a">25</span></div>
-<div class="rf-row"><span class="rf-q">SMTP (client TLS)</span><span class="rf-a">587</span></div>
-<div class="rf-row"><span class="rf-q">SSH</span><span class="rf-a">22</span></div>
-<div class="rf-row"><span class="rf-q">RDP</span><span class="rf-a">3389</span></div>
-<div class="rf-row"><span class="rf-q">IMAP / POP3</span><span class="rf-a">143 / 110</span></div>
-<div class="rf-row"><span class="rf-q">FTP</span><span class="rf-a">21</span></div>
-<div class="rf-row"><span class="rf-q">LDAP</span><span class="rf-a">389</span></div>
-</div>
-<div class="rf-card">
-<div class="rf-header green">IP Addresses — Instant Recall</div>
-<div class="rf-row"><span class="rf-q">Loopback address</span><span class="rf-a"><code>127.0.0.1</code></span></div>
-<div class="rf-row"><span class="rf-q">APIPA (DHCP failed)</span><span class="rf-a"><code>169.254.x.x</code></span></div>
-<div class="rf-row"><span class="rf-q">Class A private</span><span class="rf-a"><code>10.0.0.0/8</code></span></div>
-<div class="rf-row"><span class="rf-q">Class B private</span><span class="rf-a"><code>172.16–31.x.x</code></span></div>
-<div class="rf-row"><span class="rf-q">Class C private</span><span class="rf-a"><code>192.168.x.x</code></span></div>
-<div class="rf-row"><span class="rf-q">/24 usable hosts</span><span class="rf-a">254</span></div>
-<div class="rf-row"><span class="rf-q">Switch / Router layer</span><span class="rf-a">L2 / L3</span></div>
-<div class="rf-row"><span class="rf-q">What is NAT?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Private IPs share one public IP via router</span></div>
-</div>
-<div class="rf-card">
-<div class="rf-header amber">AD / Identity — Daily Tools</div>
-<div class="rf-row"><span class="rf-q">Manage AD users</span><span class="rf-a"><code>dsa.msc</code></span></div>
-<div class="rf-row"><span class="rf-q">Domain join / system props</span><span class="rf-a"><code>sysdm.cpl</code></span></div>
-<div class="rf-row"><span class="rf-q">Services manager</span><span class="rf-a"><code>services.msc</code></span></div>
-<div class="rf-row"><span class="rf-q">Event Viewer</span><span class="rf-a"><code>eventvwr.msc</code></span></div>
-<div class="rf-row"><span class="rf-q">Network connections</span><span class="rf-a"><code>ncpa.cpl</code></span></div>
-<div class="rf-row"><span class="rf-q">Group Policy management</span><span class="rf-a"><code>gpmc.msc</code></span></div>
-<div class="rf-row"><span class="rf-q">Apply GPO immediately</span><span class="rf-a"><code>gpupdate /force</code></span></div>
-<div class="rf-row"><span class="rf-q">AD hierarchy (top → bottom)</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Forest → Tree → Domain → OU</span></div>
-</div>
-<div class="rf-card">
-<div class="rf-header teal">Entra ID / Azure AD</div>
-<div class="rf-row"><span class="rf-q">What replaced Azure AD?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Microsoft Entra ID (same product)</span></div>
-<div class="rf-row"><span class="rf-q">Cloud vs on-prem AD</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Entra ID = cloud; AD DS = on-prem</span></div>
-<div class="rf-row"><span class="rf-q">Revoke all sessions for user</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Entra ID → user → Revoke sessions</span></div>
-<div class="rf-row"><span class="rf-q">Reset MFA for a user</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">M365 Admin → user → Manage MFA</span></div>
-<div class="rf-row"><span class="rf-q">Conditional Access does what?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Blocks access if device non-compliant</span></div>
-<div class="rf-row"><span class="rf-q">Hybrid join means</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Device in both on-prem AD + Entra ID</span></div>
-<div class="rf-row"><span class="rf-q">SSPR stands for</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Self-Service Password Reset</span></div>
-<div class="rf-row"><span class="rf-q">PIM stands for</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Privileged Identity Management</span></div>
-</div>
-<div class="rf-card">
-<div class="rf-header purple">Key Definitions — One-Liners</div>
-<div class="rf-row"><span class="rf-q">What is DNS?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Translates names to IPs (phone book)</span></div>
-<div class="rf-row"><span class="rf-q">What is DHCP?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Auto-assigns IPs to devices on network</span></div>
-<div class="rf-row"><span class="rf-q">APIPA address means</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">DHCP failed — can't reach network</span></div>
-<div class="rf-row"><span class="rf-q">TCP vs UDP</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">TCP = reliable; UDP = fast</span></div>
-<div class="rf-row"><span class="rf-q">What is PoE?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Data cable also powers the device</span></div>
-<div class="rf-row"><span class="rf-q">Dist. List vs Security Group</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Email only vs permissions + email</span></div>
-<div class="rf-row"><span class="rf-q">OSI mnemonic (bottom up)</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Please Do Not Throw Sausage Pizza Away</span></div>
-</div>
-<div class="rf-card">
-<div class="rf-header red">Intune + JAMF Quick Actions</div>
-<div class="rf-row"><span class="rf-q">Laptop stolen — first action</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Remote Wipe in Intune</span></div>
-<div class="rf-row"><span class="rf-q">Force policy update</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Devices → Sync</span></div>
-<div class="rf-row"><span class="rf-q">Get BitLocker recovery key</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Devices → Recovery Keys</span></div>
-<div class="rf-row"><span class="rf-q">Zero-touch Windows setup</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Windows Autopilot</span></div>
-<div class="rf-row"><span class="rf-q">JAMF manages what?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Apple devices (Mac, iPhone, iPad)</span></div>
-<div class="rf-row"><span class="rf-q">JAMF zero-touch enrollment</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">ADE via Apple Business Manager</span></div>
-<div class="rf-row"><span class="rf-q">JAMF remote wipe</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Computers → Management → Wipe</span></div>
-</div>
-<div class="rf-card">
-<div class="rf-header blue">Email / M365</div>
-<div class="rf-row"><span class="rf-q">Email not received — first step</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Run Message Trace in EAC</span></div>
-<div class="rf-row"><span class="rf-q">Check Microsoft outage</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">M365 Admin → Service Health</span></div>
-<div class="rf-row"><span class="rf-q">Shared mailbox license?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">No (up to 50GB)</span></div>
-<div class="rf-row"><span class="rf-q">OST file — what is it?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Local cached copy of Exchange mailbox</span></div>
-<div class="rf-row"><span class="rf-q">Outlook not syncing — first check</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Status bar bottom-right of Outlook</span></div>
-<div class="rf-row"><span class="rf-q">Outlook safe mode</span><span class="rf-a"><code>Ctrl + click</code> icon</span></div>
-<div class="rf-row"><span class="rf-q">Email flow order</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Sender → MX → Gateway → Inbox</span></div>
-</div>
-</div>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Every answer should take under 10 seconds. Slow on any of these? That's your weak spot.</p>
+  <div class="rf-grid">
+
+    <div class="rf-card">
+      <div class="rf-header blue">Ports — Know These Cold</div>
+      <div class="rf-row"><span class="rf-q">DNS</span><span class="rf-a">53</span></div>
+      <div class="rf-row"><span class="rf-q">HTTP / HTTPS</span><span class="rf-a">80 / 443</span></div>
+      <div class="rf-row"><span class="rf-q">SMTP (server–server)</span><span class="rf-a">25</span></div>
+      <div class="rf-row"><span class="rf-q">SMTP (client TLS)</span><span class="rf-a">587</span></div>
+      <div class="rf-row"><span class="rf-q">SSH</span><span class="rf-a">22</span></div>
+      <div class="rf-row"><span class="rf-q">RDP</span><span class="rf-a">3389</span></div>
+      <div class="rf-row"><span class="rf-q">IMAP / POP3</span><span class="rf-a">143 / 110</span></div>
+      <div class="rf-row"><span class="rf-q">FTP</span><span class="rf-a">21</span></div>
+      <div class="rf-row"><span class="rf-q">LDAP</span><span class="rf-a">389</span></div>
+    </div>
+
+    <div class="rf-card">
+      <div class="rf-header green">IP Addresses — Instant Recall</div>
+      <div class="rf-row"><span class="rf-q">Loopback address</span><span class="rf-a"><code>127.0.0.1</code></span></div>
+      <div class="rf-row"><span class="rf-q">APIPA (DHCP failed)</span><span class="rf-a"><code>169.254.x.x</code></span></div>
+      <div class="rf-row"><span class="rf-q">Class A private</span><span class="rf-a"><code>10.0.0.0/8</code></span></div>
+      <div class="rf-row"><span class="rf-q">Class B private</span><span class="rf-a"><code>172.16–31.x.x</code></span></div>
+      <div class="rf-row"><span class="rf-q">Class C private</span><span class="rf-a"><code>192.168.x.x</code></span></div>
+      <div class="rf-row"><span class="rf-q">/24 usable hosts</span><span class="rf-a">254</span></div>
+      <div class="rf-row"><span class="rf-q">Switch / Router layer</span><span class="rf-a">L2 / L3</span></div>
+      <div class="rf-row"><span class="rf-q">What is NAT?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Private IPs share one public IP via router</span></div>
+    </div>
+
+    <div class="rf-card">
+      <div class="rf-header amber">AD / Identity — Daily Tools</div>
+      <div class="rf-row"><span class="rf-q">Manage AD users</span><span class="rf-a"><code>dsa.msc</code></span></div>
+      <div class="rf-row"><span class="rf-q">Domain join / system props</span><span class="rf-a"><code>sysdm.cpl</code></span></div>
+      <div class="rf-row"><span class="rf-q">Services manager</span><span class="rf-a"><code>services.msc</code></span></div>
+      <div class="rf-row"><span class="rf-q">Event Viewer</span><span class="rf-a"><code>eventvwr.msc</code></span></div>
+      <div class="rf-row"><span class="rf-q">Network connections</span><span class="rf-a"><code>ncpa.cpl</code></span></div>
+      <div class="rf-row"><span class="rf-q">Group Policy management</span><span class="rf-a"><code>gpmc.msc</code></span></div>
+      <div class="rf-row"><span class="rf-q">Apply GPO immediately</span><span class="rf-a"><code>gpupdate /force</code></span></div>
+      <div class="rf-row"><span class="rf-q">AD hierarchy (top → bottom)</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Forest → Tree → Domain → OU</span></div>
+    </div>
+
+    <div class="rf-card">
+      <div class="rf-header teal">Entra ID / Azure AD</div>
+      <div class="rf-row"><span class="rf-q">What replaced Azure AD?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Microsoft Entra ID (same product)</span></div>
+      <div class="rf-row"><span class="rf-q">Cloud vs on-prem AD</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Entra ID = cloud; AD DS = on-prem</span></div>
+      <div class="rf-row"><span class="rf-q">Revoke all sessions for user</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Entra ID → user → Revoke sessions</span></div>
+      <div class="rf-row"><span class="rf-q">Reset MFA for a user</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">M365 Admin → user → Manage MFA</span></div>
+      <div class="rf-row"><span class="rf-q">Conditional Access does what?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Blocks access if device non-compliant</span></div>
+      <div class="rf-row"><span class="rf-q">Hybrid join means</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Device in both on-prem AD + Entra ID</span></div>
+      <div class="rf-row"><span class="rf-q">SSPR stands for</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Self-Service Password Reset</span></div>
+      <div class="rf-row"><span class="rf-q">PIM stands for</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Privileged Identity Management</span></div>
+    </div>
+
+    <div class="rf-card">
+      <div class="rf-header purple">Key Definitions — One-Liners</div>
+      <div class="rf-row"><span class="rf-q">What is DNS?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Translates names to IPs (phone book)</span></div>
+      <div class="rf-row"><span class="rf-q">What is DHCP?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Auto-assigns IPs to devices on network</span></div>
+      <div class="rf-row"><span class="rf-q">APIPA address means</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">DHCP failed — can't reach network</span></div>
+      <div class="rf-row"><span class="rf-q">TCP vs UDP</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">TCP = reliable; UDP = fast</span></div>
+      <div class="rf-row"><span class="rf-q">What is PoE?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Data cable also powers the device</span></div>
+      <div class="rf-row"><span class="rf-q">Dist. List vs Security Group</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Email only vs permissions + email</span></div>
+      <div class="rf-row"><span class="rf-q">OSI mnemonic (bottom up)</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Please Do Not Throw Sausage Pizza Away</span></div>
+    </div>
+
+    <div class="rf-card">
+      <div class="rf-header red">Intune + JAMF Quick Actions</div>
+      <div class="rf-row"><span class="rf-q">Laptop stolen — first action</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Remote Wipe in Intune</span></div>
+      <div class="rf-row"><span class="rf-q">Force policy update</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Devices → Sync</span></div>
+      <div class="rf-row"><span class="rf-q">Get BitLocker recovery key</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Devices → Recovery Keys</span></div>
+      <div class="rf-row"><span class="rf-q">Zero-touch Windows setup</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Windows Autopilot</span></div>
+      <div class="rf-row"><span class="rf-q">JAMF manages what?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Apple devices (Mac, iPhone, iPad)</span></div>
+      <div class="rf-row"><span class="rf-q">JAMF zero-touch enrollment</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">ADE via Apple Business Manager</span></div>
+      <div class="rf-row"><span class="rf-q">JAMF remote wipe</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Computers → Management → Wipe</span></div>
+    </div>
+
+    <div class="rf-card">
+      <div class="rf-header blue">Email / M365</div>
+      <div class="rf-row"><span class="rf-q">Email not received — first step</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Run Message Trace in EAC</span></div>
+      <div class="rf-row"><span class="rf-q">Check Microsoft outage</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">M365 Admin → Service Health</span></div>
+      <div class="rf-row"><span class="rf-q">Shared mailbox license?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">No (up to 50GB)</span></div>
+      <div class="rf-row"><span class="rf-q">OST file — what is it?</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Local cached copy of Exchange mailbox</span></div>
+      <div class="rf-row"><span class="rf-q">Outlook not syncing — first check</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Status bar bottom-right of Outlook</span></div>
+      <div class="rf-row"><span class="rf-q">Outlook safe mode</span><span class="rf-a"><code>Ctrl + click</code> icon</span></div>
+      <div class="rf-row"><span class="rf-q">Email flow order</span><span class="rf-a" style="white-space:normal;text-align:right;font-size:12px;">Sender → MX → Gateway → Inbox</span></div>
+    </div>
+
+  </div>
 </div>
 
-<!-- INTERVIEW Q&A (abbreviated for space) -->
+<!-- ═══════════════════════════════════════════════════
+     PANEL: INTERVIEW Q&A (all 15 questions)
+═══════════════════════════════════════════════════ -->
 <div id="panel-qa" class="panel">
-<p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Say each answer out loud. Aim for 30–45 seconds. Mark reviewed when you're confident.</p>
-<div class="qa-list">
-<div class="qa-section-label">Common Questions</div>
-<div class="qa-item open" id="qa-0">
-<div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Tell me about yourself.</div></div><div class="qa-arrow">›</div></div>
-<div class="qa-body">
-<div class="qa-answer">"I'm an IT support professional with 2+ years of enterprise experience — currently at PwC supporting partners and executives in a Big 4 environment. Before that I ran IT support solo across a 200+ user, 9-site hospitality group with a 95% first-contact resolution rate. My strengths are Microsoft 365, Entra ID, Intune, and network troubleshooting, backed by active home lab work in Zero Trust and hybrid cloud. I'm looking to take that into a dedicated IT support role with room to grow toward cloud and sysadmin."</div>
-<button class="mark-btn" onclick="markReviewed('qa-0', this)">Mark as reviewed</button>
-</div>
-</div>
-<div class="qa-item" id="qa-1">
-<div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Why are you leaving your current role?</div></div><div class="qa-arrow">›</div></div>
-<div class="qa-body">
-<div class="qa-answer">"PwC has been a great environment — supporting executives in a Big 4 setting is genuinely challenging. I'm looking to move into a role with more exposure to the full IT support stack. My current role is heavily AV-focused, which means I'm not getting the breadth of tickets, systems admin work, and cloud exposure I want at this stage of my career."</div>
-<button class="mark-btn" onclick="markReviewed('qa-1', this)">Mark as reviewed</button>
-</div>
-</div>
-<div class="qa-item" id="qa-2">
-<div class="qa-q" onclick="toggleQA(this)"><div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Why should we hire you?</div></div><div class="qa-arrow">›</div></div>
-<div class="qa-body">
-<div class="qa-answer">"I've proven I can handle a high-volume, multi-site environment solo with strong resolution rates. I don't just fix tickets — I document fixes, build knowledge base articles, and leave things better than I found them. I understand IT support isn't just about computers, it's about keeping people working. And I'm actively building toward cloud and security specialisation, so I'm an investment that compounds."</div>
-<button class="mark-btn" onclick="markReviewed('qa-2', this)">Mark as reviewed</button>
-</div>
-</div>
-</div>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Say each answer out loud. Aim for 30–45 seconds. Mark reviewed when you're confident. Progress saves in your browser.</p>
+  <div class="qa-list">
+
+    <div class="qa-section-label">Always Asked First</div>
+
+    <div class="qa-item open" id="qa-0">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Tell me about yourself.</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"I'm an IT support professional with 2+ years of enterprise experience — currently at PwC supporting partners and executives in a Big 4 environment. Before that I ran IT support solo across a 200+ user, 9-site hospitality group with a 95% first-contact resolution rate. My strengths are Microsoft 365, Entra ID, Intune, and network troubleshooting, backed by active home lab work in Zero Trust and hybrid cloud. I'm looking to take that into a dedicated IT support role with room to grow toward cloud and sysadmin."</div>
+        <div class="short-tip">Under 45 seconds. Lead with current role, hit the big metric, end with where you're heading.</div>
+        <button class="mark-btn" onclick="markReviewed('qa-0', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-1">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Why are you leaving your current role?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"PwC has been a great environment — supporting executives in a Big 4 setting is genuinely challenging. I'm looking to move into a role with more exposure to the full IT support stack. My current role is heavily AV-focused, which means I'm not getting the breadth of tickets, systems admin work, and cloud exposure I want at this stage of my career."</div>
+        <div class="short-tip">Never badmouth the employer. Frame it as running toward something, not escaping. This answer is honest and sounds mature.</div>
+        <button class="mark-btn" onclick="markReviewed('qa-1', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-section-label">Behavioural — Have Two STAR Stories Ready</div>
+
+    <div class="qa-item" id="qa-2">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">How do you prioritise tickets when you have multiple open?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"Business impact first. Whole office down = P1, escalate immediately. Single user fully blocked = P2, I jump on it. Minor issues get queued. I follow the SLA matrix, update users proactively, and never let a ticket go silent. Nobody should have to chase me."</div>
+        <button class="mark-btn" onclick="markReviewed('qa-2', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-3">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-behav">STAR Story 1</span></div><div class="qa-text">Describe a difficult or high-pressure situation you handled.</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"At Platinum Hospitality, a network outage hit the POS systems during peak dinner service — revenue directly impacted across multiple sites. I immediately notified venue managers so they weren't in the dark, put them on 15-minute update cycles, and traced the fault to a failed switch. I pushed a remote config fix and had all sites restored within 40 minutes. The key was communication — stakeholders stayed calm because they knew it was being worked on."</div>
+        <div class="short-tip">This is STAR story 1. If asked a second behavioural question, don't repeat this scenario — use STAR story 2 below.</div>
+        <button class="mark-btn" onclick="markReviewed('qa-3', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-4">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-behav">STAR Story 2</span></div><div class="qa-text">Tell me about a time you had to learn something quickly.</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"When I moved into the IT Support Officer role at Platinum Hospitality, I had no prior Intune experience but the company needed an MDM rollout across 9 sites within weeks. I worked through Microsoft Learn and documentation, tested in a trial tenant, and within three weeks had Autopilot profiles configured and was deploying zero-touch devices. By the end of the rollout all sites were on compliant, managed endpoints. I can close skill gaps fast when the business needs it."</div>
+        <div class="short-tip">This answer also sells your self-teaching instinct, which is one of your strongest differentiators at this experience level.</div>
+        <button class="mark-btn" onclick="markReviewed('qa-4', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-5">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-behav">Behavioural</span></div><div class="qa-text">How do you handle a VIP or an angry user?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"I stay professional — the frustration is about their work being blocked, not about me. I acknowledge it: 'I understand this is urgent, let me get onto it right now.' I give a clear timeframe, stay focused on the fix, and update them when it's resolved. At PwC I support senior partners regularly — speed and clear communication matter far more than technical jargon."</div>
+        <button class="mark-btn" onclick="markReviewed('qa-5', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-6">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">What do you do when you can't solve a problem?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"I check the internal Knowledge Base first — chances are someone solved it before. If not, Microsoft docs or the specific error code. Still stuck, I ask a senior colleague. If we're approaching an SLA breach, I escalate — always with a full log: what I tried, error messages, what I ruled out. I never escalate blind and make someone else start from scratch."</div>
+        <button class="mark-btn" onclick="markReviewed('qa-6', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-section-label">Technical</div>
+
+    <div class="qa-item" id="qa-7">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">What is Active Directory and what do you use it for day-to-day?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"Active Directory is Microsoft's centralised directory service — manages users, computers, and security policies across a network. Everything authenticates through the Domain Controller. Day-to-day I use dsa.msc to create accounts, reset passwords, unlock accounts, manage group memberships, and handle onboarding and offboarding. It's the most-touched tool in L1/L2 support."</div>
+        <p>Key structure: <strong>Forest → Tree → Domain → OU</strong></p>
+        <button class="mark-btn" onclick="markReviewed('qa-7', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-8">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">Walk me through troubleshooting slow internet for a user.</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"First: is it just them or everyone on the floor? That tells me device vs network. I run ping 8.8.8.8 -t to check packet loss, then ping google.com — if 8.8.8.8 works but google.com fails, it's DNS. I run ipconfig /release, /renew, /flushdns. Check the IP isn't a 169.254 APIPA address. If WiFi, I check Meraki for the AP status. Whole office affected — ISP call and escalate to the network team."</div>
+        <button class="mark-btn" onclick="markReviewed('qa-8', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-9">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">What do you do in Microsoft Intune day-to-day?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"I use Intune for device fleet management. When a new staff member starts I enroll their device and configure Windows Autopilot for zero-touch setup. I push required apps remotely — set as Required so they install without user action. If a device is reported stolen, I immediately do a remote wipe from the portal. I use Conditional Access to ensure only compliant, enrolled devices can reach company resources."</div>
+        <button class="mark-btn" onclick="markReviewed('qa-9', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-10">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">Distribution List vs Security Group — what's the difference?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"A Distribution List is email-only — one email fans out to all members but it can't control access to anything. A Security Group controls permissions — shared drives, SharePoint sites, applications. Security groups can also be mail-enabled so you get both. I create and manage both in M365 Admin Centre."</div>
+        <button class="mark-btn" onclick="markReviewed('qa-10', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-11">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-tech">Technical</span></div><div class="qa-text">What is Group Policy and how have you used it?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"Group Policy lets admins push configuration settings to all users and computers in a domain from one place — no manual per-machine work. I create GPOs and link them to OUs. I've used it for password complexity enforcement, mapping network drives, pushing security configs, and setting desktop wallpapers. When I need changes to apply immediately I run gpupdate /force on the client."</div>
+        <button class="mark-btn" onclick="markReviewed('qa-11', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-section-label">The Tricky Ones — Prepare These Carefully</div>
+
+    <div class="qa-item" id="qa-12">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-trap">Trap Question</span></div><div class="qa-text">What salary are you looking for?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"Based on my enterprise experience across Microsoft 365, Intune, and multi-site support at PwC and Platinum Hospitality, I'm targeting $70,000–$80,000 base. That said, I'm open to discussion — if the role has genuine growth toward cloud or sysadmin, I'm flexible on the exact number."</div>
+        <div class="short-tip">Always give a range, never a single number. Anchor slightly above your real minimum. The second sentence signals you won't walk over money alone. Research the market rate for the specific role before the interview and adjust accordingly.</div>
+        <button class="mark-btn" onclick="markReviewed('qa-12', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-13">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-common">Most Asked</span></div><div class="qa-text">Why should we hire you?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer">"I've proven I can handle a high-volume, multi-site environment solo with strong resolution rates. I don't just fix tickets — I document fixes, build knowledge base articles, and leave things better than I found them. I understand IT support isn't just about computers, it's about keeping people working. And I'm actively building toward cloud and security specialisation, so I'm an investment that compounds."</div>
+        <button class="mark-btn" onclick="markReviewed('qa-13', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+    <div class="qa-item" id="qa-14">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div><div class="qa-label"><span class="tag tag-trap">Always Happens</span></div><div class="qa-text">Do you have any questions for us?</div></div>
+        <div class="qa-arrow">›</div>
+      </div>
+      <div class="qa-body">
+        <div class="qa-answer green">Never say "No, I think you've covered everything." Pick 2–3 from this list:</div>
+        <ul style="margin-top:10px;">
+          <li>"What does a typical first week look like for someone in this role?"</li>
+          <li>"What tools and ticketing systems does the team use day-to-day?"</li>
+          <li>"What does the progression path look like — is there a route from L1/L2 toward sysadmin or cloud?"</li>
+          <li>"What's the biggest challenge the IT team is working through right now?"</li>
+          <li>"How is performance measured — ticket volume, SLAs, or something else?"</li>
+        </ul>
+        <div class="short-tip">The progression question is the most important one for you. It signals ambition and helps you figure out if the role is actually worth taking.</div>
+        <button class="mark-btn" onclick="markReviewed('qa-14', this)">Mark as reviewed</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<!-- A DAY IN A LIFE -->
+<!-- ═══════════════════════════════════════════════════
+     PANEL: DAY IN A LIFE
+═══════════════════════════════════════════════════ -->
 <div id="panel-day" class="panel">
-<p style="color:var(--muted);font-size:13px;margin-bottom:16px;">This is what a typical day looks like. Interviewers ask this to see if you understand the operational reality of the role.</p>
-<div class="timeline">
-<div class="timeline-event">
-<div class="timeline-time">8:30 AM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Arrive & Review Ticket Queue</strong>
-<p>Check ServiceNow for overnight/early-morning tickets. Triage by priority: 2 P2s waiting (user can't log in, printer down), 5 P3/P4s (software requests, password resets, slow internet). Run through Slack for any urgent messages from management or helpdesk.</p>
-</div>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:20px;">What a realistic L1/L2 day looks like. Interviewers ask this to see if you understand the operational pace of the role — not just the technical side.</p>
+  <div class="timeline">
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">8:30 AM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Arrive &amp; Triage the Queue</strong>
+        <p>Open ServiceNow. Overnight tickets waiting: 1 account lockout (P2), 1 printer down (P2), 4 P3/P4s (password resets, software request, slow internet). Check M365 Service Health — no outages. Review Slack/Teams for escalations from management. Order by priority, build a mental plan for the morning.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">8:50 AM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>P2: Account Lockout</strong>
+        <p>User can't log in — locked out after 3 failed attempts. Verify identity (confirm with manager). Open dsa.msc, unlock account, reset password, tick "User must change at next logon." Ask: do you have Outlook or Teams on your phone? Old saved password hammering the account. User updates phone creds, back in within 8 minutes. Close ticket with resolution notes.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">9:15 AM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>P2: Printer Down on Floor 2</strong>
+        <p>Printer showing offline for the whole floor. Physical check: power on, paper loaded, no error lights. Ping the printer IP — reachable. Print jobs stuck in queue. Open services.msc, restart Print Spooler. Clear spool queue (C:\Windows\System32\spool\PRINTERS). Printer back online. Floor sorted in 15 minutes. Log in KB for next time.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">9:45 AM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>New Hire Onboarding Handoff</strong>
+        <p>New staff member arrives. Confirm: AD account active, email syncing, M365 license assigned, device enrolled in Intune and showing compliant. Walk them through first login, password change, Teams setup. Point them to the IT help desk Slack channel. Confirm access to shared drives. Done in 30 mins — document completion in ServiceNow.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">10:30 AM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Rapid Ticket Clearance (P3/P4s)</strong>
+        <p>Work through the backlog: reset 2 passwords, add a user to a distribution list (Exchange Admin Center), grant SharePoint site access (remove from wrong security group, add to correct one in dsa.msc), approve a software request via Intune (push app as Required). Each under 5 minutes. Every ticket updated in real time — no ticket goes silent.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">11:30 AM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Teams / Audio Issue</strong>
+        <p>User on VPN says Teams calls are dropping. Test at teams.microsoft.com in browser — works fine. Issue is desktop client. Clear cache (%appdata%\Microsoft\Teams, delete contents), restart Teams. Test call — resolved. Advise user to restart Teams client weekly. Update ticket. 15 minutes.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">12:00 PM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Lunch + Team Standup</strong>
+        <p>30-min team standup. Report morning stats, flag 1 open P3 (slow internet, floor 3 — investigating after lunch). Manager mentions 3 new devices arriving tomorrow — need Autopilot configured today. Add to afternoon list. Eat. Recharge.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">1:00 PM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Knowledge Base Update</strong>
+        <p>30 minutes documentation. Write up the printer Spooler fix from this morning — clear steps so any team member can handle it next time. Update the account lockout guide with the "check mobile saved credentials" step. Small time investment, big long-term payoff.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">1:30 PM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Investigate: Slow Internet (Floor 3)</strong>
+        <p>Isolated to one user. Run ping 8.8.8.8 -t (no packet loss), ping google.com (fails) — DNS. Run ipconfig /flushdns, /release, /renew. Still slow. Check Meraki dashboard — AP on floor 3 showing degraded signal. Reassign user to stronger AP. Speed back to normal. Escalate AP health to network team as P3. Document findings.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">2:15 PM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Device Enrollment — Autopilot Config</strong>
+        <p>3 new devices arriving tomorrow. Configure Windows Autopilot profiles in Intune: assign deployment profile, configure OOBE settings, enable BitLocker policy, push required apps. Register device serial numbers in Intune hardware hash. Zero-touch setup ready — devices will self-configure when user signs in tomorrow.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">3:15 PM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Outlook Sync Issue</strong>
+        <p>User can't see new emails in Outlook. Check status bar — "Disconnected." Test OWA (office.com) — emails visible. Local client issue. Rebuild OST: close Outlook, delete .ost from %localappdata%\Microsoft\Outlook\, reopen. Outlook resyncs. Back in 10 minutes. Confirm with user, close ticket.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">4:00 PM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>Offboarding Request</strong>
+        <p>HR confirms employee finishing today. Follow offboarding checklist: disable AD account (dsa.msc), revoke Entra ID sessions, remote wipe device in Intune, remove M365 licenses, convert mailbox to shared (manager retains access), remove from all distribution lists and Teams. Collect hardware. Every step timestamped in ServiceNow. Manager signs off.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-left"><span class="timeline-time">5:00 PM</span><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <strong>End of Day Wrap</strong>
+        <p>Review ServiceNow: 17 tickets closed, 2 escalated (1 network issue to L3, 1 hardware RMA in progress). Update open tickets with current status. Write handoff notes for any overnight on-call coverage. Check tomorrow's onboarding schedule — 3 new hires, devices are ready. Log off.</p>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<div class="timeline-event">
-<div class="timeline-time">8:45 AM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Jump on P2: Account Lockout</strong>
-<p>User locked out on 3rd attempt. Verify identity via manager, unlock in dsa.msc, reset password, check if old password cached on phone (Teams/Outlook running old creds). Update ticket, close with user confirmation.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">9:15 AM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>New Staff Onboarding Handoff</strong>
-<p>IT coordinator hands over new hire. Verify AD account created, email synced, Intune enrolled device, Teams licenses assigned. Walk them through login, show them the help desk Slack channel, confirm access to shared drives. Document in ticket.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">10:00 AM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Handle Printer Escalation</strong>
-<p>Printer on 2nd floor down. Not a hardware issue — checked toner, power. Network ping succeeds but print jobs stuck. Restart Print Spooler on the device (services.msc), clear queue, restart. Users back in 10 minutes. Document the fix in KB.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">10:45 AM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Routine Helpdesk Support</strong>
-<p>Handle 3–4 quick wins: password resets, add user to distribution list, unlock shared drive access, install requested app via Intune. Each ~5 mins. Update status in ServiceNow, move to next.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">11:30 AM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Remote Collaboration Issue</strong>
-<p>User on VPN, Teams call dropping. Test at teams.microsoft.com (web) — works fine. Desktop app issue. Clear cache (%appdata%\Microsoft\Teams), restart. Reconnect to VPN, test again. Resolved.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">12:00 PM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Lunch + Standup</strong>
-<p>30-min standup with IT team. Report on morning tickets, escalations handled, any blockers. Manager asks about device enrollment status for new procurement batch. Note for PM.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">1:00 PM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Knowledge Base / Documentation</strong>
-<p>Write up the printer Spooler fix for KB (so others can handle it). Update common password reset guide with new MFA reset procedures. 30 mins — small wins that scale support.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">1:45 PM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Device Enrollment & Mobile Management</strong>
-<p>3 new hires' devices need Windows Autopilot setup. Configure profiles in Intune, trigger enrollment, monitor for BitLocker/compliance. One device fails compliance (old WiFi driver). Push driver update via WSUS, sync device. All enrolled by 2:30.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">2:45 PM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Email/Exchange Issue</strong>
-<p>User can't see shared mailbox after being added. Check M365 Admin Center — license assigned, group added. Restart Outlook. Works. Mention to user they may need to restart their client for permissions to cache locally.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">3:30 PM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Escalation & Networking Question</strong>
-<p>User on floor 3 slow internet. Isolate: just them. Ping 8.8.8.8 (good), ping google.com (fails) — DNS issue. ipconfig /flushdns, /release, /renew. Check with Meraki dashboard — AP on floor 3 is fine. Restart docking station + reboot. Fixed.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">4:15 PM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>Offboarding Request</strong>
-<p>Manager requests account disable for departing employee. Verify via HR, disable AD account (dsa.msc), revoke Entra ID sessions, remote wipe device (Intune), collect hardware checklist. Follow offboarding process to completion. Archive ticket.</p>
-</div>
-</div>
-
-<div class="timeline-event">
-<div class="timeline-time">5:00 PM</div>
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<strong>End-of-Day Wrap</strong>
-<p>Review ServiceNow: 18 tickets closed today, 3 escalated to L3 (one networking issue needs ISP involvement, one Exchange mail rule issue, one hardware RMA). Update status on open tickets. Prep tomorrow's list. Handoff notes for night shift.</p>
-</div>
-</div>
-</div>
-</div>
-
-<!-- ONBOARDING / OFFBOARDING -->
+<!-- ═══════════════════════════════════════════════════
+     PANEL: ONBOARDING / OFFBOARDING
+═══════════════════════════════════════════════════ -->
 <div id="panel-onboard" class="panel">
-<p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Complete checklists from day one to last day. These protect both the business and you.</p>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Complete checklists from first day to last. These protect both the business and the user — and knowing them cold impresses interviewers.</p>
 
-<h3 style="margin: 20px 0 12px; font-size: 14px; font-weight: 700;">🟢 ONBOARDING (Pre-Arrival to Day 30)</h3>
+  <div class="ob-section-title">🟢 ONBOARDING</div>
 
-<div class="checklist">
-<div class="checklist-phase">
-<div class="checklist-phase-title">📋 Pre-Arrival (Week Before Start)</div>
-<div class="checklist-items">
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">HR confirms start date, role, manager, employment type</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Order laptop/desktop + peripherals (keyboard, mouse, monitor). Request expedited shipping if needed</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Create AD account in correct OU (staff/contractors/department). Set temporary password</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Request M365 license assignment (Teams, Exchange, SharePoint — confirm seat type with HR)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Create mailbox in Exchange — verify in EAC, send test email</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Add to relevant distribution lists (company-wide, department, location)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Create Teams account + add to appropriate teams (General, Department, Location)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Enroll device in Intune (image OS, set Autopilot profile, enable BitLocker)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Grant access to shared drives/SharePoint sites (manager specifies list)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Configure VPN access if required (Cisco AnyConnect or similar). Send VPN creds separately</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Physical setup: desk, phone, badge/swipe card. Confirm with facilities</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Send welcome email with first login credentials, help desk contact, parking/location info</div></div>
-</div>
-</div>
+  <div class="checklist-wrap">
+    <div class="checklist-phase">
+      <div class="checklist-phase-title">📋 Pre-Arrival — 1 Week Before Start</div>
+      <div class="checklist-items">
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Confirm start date, role, department, manager, and employment type with HR</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Order laptop/desktop + peripherals (keyboard, mouse, monitor, headset). Confirm delivery before Day 1</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Create AD account in correct OU (matches department/location). Set temp password, force change on first logon</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Assign M365 license in Admin Center (confirm seat type: E3/E5/F1 with HR)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Verify mailbox creation in Exchange Admin Center — send test email to confirm delivery</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Add to department distribution lists and relevant Teams channels</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Enroll device in Intune: configure Autopilot profile, enable BitLocker policy, push required apps</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Grant access to shared drives and SharePoint sites (manager provides list of required access)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Configure VPN access if remote work required — send credentials separately from device</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Coordinate physical access with facilities: desk, building swipe card, parking if applicable</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Send welcome email with temp credentials, help desk contact, WiFi details, and parking/location info</div></div>
+      </div>
+    </div>
 
-<div class="checklist-phase">
-<div class="checklist-phase-title">🖥️ First Day (Day 1)</div>
-<div class="checklist-items">
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Greet user, confirm identity, provide device</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Walk through first login (AD password, change temp password, Outlook sync)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Show them how to join Teams, access shared drives, open ServiceNow for help tickets</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Confirm WiFi/VPN connection working (ping google.com, test Teams call)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Verify phone setup (if hardphone: IP assignment, voicemail config; if softphone: Teams calls working)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Brief on IT policies: password requirements, VPN usage, incident reporting, security compliance</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Provide help desk contact info (phone, email, Slack, ServiceNow portal)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Confirm device enrolled in Intune + showing compliant</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Document in ServiceNow: completed items, any blockers, manager sign-off</div></div>
-</div>
-</div>
+    <div class="checklist-phase">
+      <div class="checklist-phase-title">🖥️ Day 1 — Device Handoff &amp; Setup</div>
+      <div class="checklist-items">
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Greet user, confirm identity, hand over device and accessories</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Walk through first login: AD password, forced change, Outlook sync confirmation</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Confirm Teams login, test audio (Settings → Devices), and send test message</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Verify WiFi + VPN connection: run ping 8.8.8.8, open company intranet</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Confirm shared drive access (map drives if needed via GPO or manual UNC path)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Show user how to raise an IT ticket (ServiceNow portal, help desk Slack/Teams channel, phone)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Brief on IT policies: password requirements, VPN use, acceptable use, security reporting</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Confirm device shows compliant in Intune (BitLocker on, AV active, OS up to date)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Set up MFA: guide user through Microsoft Authenticator app registration</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Document all completed actions in ServiceNow with manager sign-off</div></div>
+      </div>
+    </div>
 
-<div class="checklist-phase">
-<div class="checklist-phase-title">📅 Week 1–4 Follow-Up</div>
-<div class="checklist-items">
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Day 3 check-in: confirm no technical blockers, device running smoothly</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Day 10 follow-up: any software/access issues? Manager feedback?</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Day 30 formal review: security compliance verified, device health confirmed, all accounts active</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Remind user of training: MFA setup, password manager, phishing awareness, VPN security</div></div>
-</div>
-</div>
-</div>
+    <div class="checklist-phase">
+      <div class="checklist-phase-title">📅 Week 1–4 Follow-Up</div>
+      <div class="checklist-items">
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Day 3: check-in call — any access issues, software blockers, hardware problems?</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Day 10: confirm all required applications installed and working (check Intune app deployment status)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Day 30: formal review — device health, security compliance, all accounts active, no outstanding tickets</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Remind user to complete mandatory IT training: phishing awareness, password manager setup, VPN security</div></div>
+      </div>
+    </div>
+  </div>
 
-<h3 style="margin: 20px 0 12px; font-size: 14px; font-weight: 700;">🔴 OFFBOARDING (Last Working Day)</h3>
+  <div class="ob-section-title">🔴 OFFBOARDING</div>
 
-<div class="checklist">
-<div class="checklist-phase">
-<div class="checklist-phase-title">📋 Pre-Exit (2 Weeks Before)</div>
-<div class="checklist-items">
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">HR confirms exit date, exit type (resignation/termination/RIF)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Identify knowledge transfer: manager specifies critical processes, data, credentials to hand over</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">For terminations: brief security team, confirm if badge/physical access to be revoked same day</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Schedule exit interview/knowledge transfer session (manager + departing user)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Check for VIP/high-access accounts: audit permissions, list shared mailboxes, sensitive data access</div></div>
-</div>
-</div>
+  <div class="checklist-wrap">
+    <div class="checklist-phase">
+      <div class="checklist-phase-title">📋 Pre-Exit — 1–2 Weeks Before Last Day</div>
+      <div class="checklist-items">
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">HR confirms exit date and type (resignation / termination / contract end)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">For terminations: brief security team, confirm badge/access revocation timing (often same-day immediate)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Identify high-value access: admin accounts, sensitive shared mailboxes, privileged permissions — flag for audit</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Manager confirms knowledge transfer completed — IT is not responsible for data handoff, but coordinate timing</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Schedule hardware collection — confirm device return on last working day</div></div>
+      </div>
+    </div>
 
-<div class="checklist-phase">
-<div class="checklist-phase-title">🔐 Last Working Day — Immediate Actions</div>
-<div class="checklist-items">
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-check">✓</div><div class="checklist-task"><strong>PRIORITY:</strong> Disable AD account (dsa.msc → right-click → Disable Account)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Revoke all active Entra ID sessions (Entra ID portal → user → Revoke sessions)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Intune remote wipe (Intune → Devices → find device → Wipe Computer)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Disable all licenses in M365 Admin Center (Teams, Exchange, SharePoint, etc.)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Revoke VPN access (remove from VPN groups, if applicable reset VPN credentials)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Transfer mailbox to manager or archive (if long-term retention needed, move to shared mailbox)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Remove from all distribution lists + Teams teams (use M365 Admin or Teams portal)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Revoke access to shared drives/SharePoint (remove from security groups in AD)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Retrieve and document all company hardware (laptop, phone, badge, keys, peripherals)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Collect any BitLocker recovery keys if asset being redeployed (Intune → Recovery Keys)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Audit any admin/service accounts they held → reassign or disable</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Check for personal data on device → ensure deletion before asset redeployment</div></div>
-</div>
-</div>
+    <div class="checklist-phase">
+      <div class="checklist-phase-title">🔐 Last Working Day — Run in This Order</div>
+      <div class="checklist-items">
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text"><strong>Step 1 — Disable AD account</strong> (dsa.msc → right-click → Disable Account). This is the priority — do it first</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text"><strong>Step 2 — Revoke Entra ID sessions</strong> (Entra ID portal → user → Revoke all sign-in sessions)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text"><strong>Step 3 — Intune remote wipe</strong> (Intune → Devices → find device → Wipe). Confirms data removal</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Remove all M365 licenses in Admin Center (Teams, Exchange, SharePoint)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Revoke VPN access (remove from VPN groups in AD or third-party VPN portal)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Convert mailbox to shared mailbox or archive it (manager retains access for 90 days)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Remove from all distribution lists and Teams teams (M365 Admin or Teams Admin Center)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Remove from SharePoint site permission groups (revoke in AD security groups)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Collect all hardware: laptop, phone, headset, badge, keys, monitors — document serial numbers</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Audit admin or service accounts the user held — reassign or disable each one</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Retrieve BitLocker recovery key before wiping if device will be redeployed (Intune → Recovery Keys)</div></div>
+      </div>
+    </div>
 
-<div class="checklist-phase">
-<div class="checklist-phase-title">📝 Post-Exit (Within 24 Hours)</div>
-<div class="checklist-items">
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Verify all systems show account as disabled in compliance audit</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Document departure in ServiceNow with timestamp of each action</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Confirm device decommissioned or reimaged (if high-security environment, wipe and audit)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">Security team confirms no residual access (run access audit if required by compliance)</div></div>
-<div class="checklist-item"><div class="checklist-check">✓</div><div class="checklist-task">HR acknowledgement: all IT actions completed, employee record marked as offboarded</div></div>
-</div>
-</div>
-</div>
+    <div class="checklist-phase">
+      <div class="checklist-phase-title">📝 Post-Exit — Within 24 Hours</div>
+      <div class="checklist-items">
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Verify all systems confirm account as disabled — run access audit if compliance requires it</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Document every action in ServiceNow with exact timestamp (legal protection for both parties)</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">Device decommissioned or reimaged — confirm wipe complete before redeployment</div></div>
+        <div class="checklist-item"><div class="check-icon">✓</div><div class="check-text">HR acknowledgement: all IT actions completed, employee record flagged as offboarded</div></div>
+      </div>
+    </div>
+  </div>
 
-<div class="tip">🚨 <strong>Critical:</strong> For terminations (especially involuntary), disable account IMMEDIATELY at end of business day, BEFORE user leaves building. No exceptions.</div>
+  <div class="warn" style="margin-top:14px;">🚨 For involuntary terminations — disable the account the moment the employee is informed, before they leave the building. No exceptions.</div>
 
 </div>
 
-<!-- TOOLS & USE CASES -->
+<!-- ═══════════════════════════════════════════════════
+     PANEL: TOOLS & USE CASES
+═══════════════════════════════════════════════════ -->
 <div id="panel-tools" class="panel">
-<p style="color:var(--muted);font-size:13px;margin-bottom:16px;">What you actually use every day. Knowing these tools inside-out is what separates confident L1/2 support from fumbling.</p>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">What you use every day as L1/L2. Know each tool's purpose and what you specifically do inside it — interviewers ask this constantly.</p>
 
-<h3 style="margin: 20px 0 12px; font-size: 14px; font-weight: 700;">🔑 Identity & Access (Active Directory / Entra ID)</h3>
-<div class="tool-grid">
-<div class="tool-card">
-<div class="tool-category">Local Directory</div>
-<div class="tool-name">Active Directory Users & Computers (dsa.msc)</div>
-<div class="tool-desc">Your daily workhorse. Manage on-prem users, computers, groups, and OUs.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Create/delete user accounts</li>
-<li>Reset passwords + force change at next logon</li>
-<li>Unlock locked-out accounts</li>
-<li>Disable departing employees</li>
-<li>Add/remove group memberships</li>
-<li>Move users between OUs (applies different GPOs)</li>
-<li>Check account properties (expiry, last login, etc.)</li>
-</ul>
-</div>
+  <div class="tool-section-title">🔑 Identity &amp; Access Management</div>
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <div class="tool-category">On-Prem Directory</div>
+      <div class="tool-name">Active Directory — dsa.msc</div>
+      <div class="tool-desc">Daily workhorse for managing on-prem users, computers, groups, and OUs. If you work in a hybrid or on-prem environment, you live here.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Create, modify, disable, and delete user accounts</li>
+          <li>Reset passwords + force change at next logon</li>
+          <li>Unlock locked-out accounts</li>
+          <li>Add/remove users from security and distribution groups</li>
+          <li>Move accounts between OUs (controls GPO application)</li>
+          <li>Check last logon, password expiry, account status</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Cloud Identity</div>
+      <div class="tool-name">Microsoft Entra ID (Azure AD)</div>
+      <div class="tool-desc">Cloud-based identity management. Manages users synced from on-prem AD or cloud-native accounts. Controls MFA, Conditional Access, and session management.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Reset MFA for users locked out of their authenticator</li>
+          <li>Revoke all active sessions (emergency account compromise)</li>
+          <li>View device compliance status (enrolled in Intune?)</li>
+          <li>Check sign-in logs (why is the user being blocked?)</li>
+          <li>Manage Conditional Access policies (block non-compliant devices)</li>
+          <li>Enable/disable SSPR per user or group</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Group Policy</div>
+      <div class="tool-name">Group Policy Management — gpmc.msc</div>
+      <div class="tool-desc">Push configuration to all machines in a domain at once. L1/L2 mainly applies and troubleshoots existing GPOs rather than creating new ones.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Run <code>gpupdate /force</code> to immediately apply a policy</li>
+          <li>Run <code>gpresult /r</code> to see which GPOs apply to a machine</li>
+          <li>Understand GPO purposes: password policy, drive mapping, software restrictions</li>
+          <li>Troubleshoot why a user isn't getting an expected policy</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">System Services</div>
+      <div class="tool-name">Services Manager — services.msc</div>
+      <div class="tool-desc">Start, stop, and restart Windows background services. Critical for printer, network, and update troubleshooting.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Restart Print Spooler (stuck print queues)</li>
+          <li>Stop/start Windows Update service</li>
+          <li>Restart BITS for OneDrive/sync issues</li>
+          <li>Check if a service is set to start automatically on reboot</li>
+          <li>Know the common services by name and what they control</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tool-section-title">📧 Email &amp; Communication</div>
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <div class="tool-category">Email Administration</div>
+      <div class="tool-name">Exchange Admin Center (EAC)</div>
+      <div class="tool-desc">Manage mailboxes, distribution lists, mail flow rules, and shared inboxes. Your go-to for any email-level issue that isn't a client problem.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Create and manage distribution lists + shared mailboxes</li>
+          <li>Add or remove members from groups</li>
+          <li>Set send-as and full-access permissions on shared mailboxes</li>
+          <li>Run Message Trace to debug missing or undelivered emails</li>
+          <li>Check mail flow rules and transport connectors</li>
+          <li>Recover deleted mailboxes within 30-day retention window</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Tenant Management</div>
+      <div class="tool-name">Microsoft 365 Admin Center</div>
+      <div class="tool-desc">Top-level admin hub for all Microsoft services. Manage users, licenses, subscriptions, and service health from one place.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Assign and remove M365 licenses</li>
+          <li>Reset user passwords and unlock accounts</li>
+          <li>Check Microsoft Service Health (is Teams/Exchange down?)</li>
+          <li>Reset MFA for locked-out users</li>
+          <li>View audit logs (who changed what and when)</li>
+          <li>Manage organisation-wide settings (password policies, MFA defaults)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Email Client</div>
+      <div class="tool-name">Outlook</div>
+      <div class="tool-desc">The client-side of Exchange. You'll troubleshoot sync, performance, and add-in issues regularly.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Check Exchange connection status (bottom-right corner)</li>
+          <li>Launch Safe Mode (<code>Ctrl+click</code> the icon) to isolate add-in conflicts</li>
+          <li>Rebuild OST file (delete from %localappdata%\Microsoft\Outlook\)</li>
+          <li>Create a new mail profile for persistent issues (Control Panel → Mail)</li>
+          <li>Verify autodiscover is working (confirms server connectivity)</li>
+          <li>Know when OWA is the right workaround vs. a fix</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Team Collaboration</div>
+      <div class="tool-name">Microsoft Teams Admin Center</div>
+      <div class="tool-desc">Manage Teams structure, meeting policies, app permissions, and user settings at the org level.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Add/remove members from Teams and channels</li>
+          <li>Manage org-wide settings (guest access, file sharing)</li>
+          <li>Troubleshoot Teams meeting and calling policies</li>
+          <li>Pin or restrict apps organisation-wide</li>
+          <li>View usage reports and user activity</li>
+          <li>Reset user Teams settings if client is behaving unexpectedly</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tool-section-title">🖥️ Device Management &amp; Support</div>
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <div class="tool-category">Mobile Device Management</div>
+      <div class="tool-name">Microsoft Intune</div>
+      <div class="tool-desc">Enroll, manage, and secure Windows, macOS, iOS, and Android devices. Zero-touch deployment via Autopilot. Remote wipe and compliance enforcement.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Enroll new devices using Windows Autopilot</li>
+          <li>Monitor compliance (BitLocker on? AV active? OS current?)</li>
+          <li>Remote wipe stolen or departing-employee devices — immediately</li>
+          <li>Push apps to devices (Required = auto-installs, Available = user choice)</li>
+          <li>Sync device to force policy update</li>
+          <li>Retrieve BitLocker recovery keys before device redeployment</li>
+          <li>Configure Conditional Access to block non-compliant devices</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Apple Device Management</div>
+      <div class="tool-name">JAMF Pro</div>
+      <div class="tool-desc">MDM equivalent of Intune but exclusively for Apple devices — Mac, iPhone, iPad. Zero-touch via ADE through Apple Business Manager.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Enroll Macs (manual or zero-touch via ADE)</li>
+          <li>Push policies and applications to Apple devices</li>
+          <li>Remote lock a Mac with a 6-digit PIN</li>
+          <li>Remote wipe a lost or stolen Apple device</li>
+          <li>View device inventory (OS version, compliance, hardware specs)</li>
+          <li>Create Smart Groups (dynamic grouping by criteria — like Intune dynamic groups)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">System Information</div>
+      <div class="tool-name">System Properties — sysdm.cpl</div>
+      <div class="tool-desc">Manage machine name, domain membership, and system info. Essential for domain-join and trust relationship issues.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Join or remove a device from the domain</li>
+          <li>Rename the computer to match naming convention</li>
+          <li>Check Windows edition and build version</li>
+          <li>View CPU, RAM, and system type</li>
+          <li>Repair broken domain trust (remove → rejoin → restart)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Event Logging</div>
+      <div class="tool-name">Event Viewer — eventvwr.msc</div>
+      <div class="tool-desc">Windows system logs for diagnosing errors, crashes, and security events. Critical for understanding what went wrong and when.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Check Application, System, and Security logs for errors</li>
+          <li>Search by Event ID (4625 = logon failure, 6006 = clean shutdown)</li>
+          <li>Find source of repeated account lockouts (which machine?)</li>
+          <li>Identify timestamp of last unexpected reboot</li>
+          <li>Export logs for L3 or vendor investigation</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tool-section-title">🌐 Networking &amp; Connectivity</div>
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <div class="tool-category">Network Monitoring</div>
+      <div class="tool-name">Cisco Meraki Dashboard</div>
+      <div class="tool-desc">Cloud-managed WiFi, switches, and firewalls. View AP health, connected clients, bandwidth, and remotely restart access points.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Check AP status (online, degraded, offline)</li>
+          <li>View which devices are connected to which AP</li>
+          <li>Check signal strength and channel utilisation</li>
+          <li>Remotely reboot an AP</li>
+          <li>Monitor bandwidth usage by device or SSID</li>
+          <li>Confirm corporate vs guest network separation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Network Config</div>
+      <div class="tool-name">Network Connections — ncpa.cpl</div>
+      <div class="tool-desc">Configure IP settings, toggle network adapters, and diagnose wired vs wireless connection problems.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Set a static IP address (when DHCP fails or is unavailable)</li>
+          <li>Change DNS servers for testing (point to 8.8.8.8)</li>
+          <li>Disable and re-enable a network adapter to reset connection</li>
+          <li>Check link speed and duplex settings on a wired connection</li>
+          <li>Identify if a WiFi or Ethernet adapter is causing the issue</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Command Line</div>
+      <div class="tool-name">CMD / PowerShell</div>
+      <div class="tool-desc">Your fastest troubleshooting weapon. Run network tests, flush caches, check user details, and force policy updates without touching a GUI.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li><code>ipconfig /all</code> — full network info (IP, DNS, gateway, MAC)</li>
+          <li><code>ipconfig /release /renew /flushdns</code> — refresh network and DNS</li>
+          <li><code>ping 8.8.8.8 -t</code> — continuous ping, check packet loss</li>
+          <li><code>ping google.com</code> — DNS test (if 8.8.8.8 works but this fails = DNS issue)</li>
+          <li><code>tracert google.com</code> — trace hops to find where connection breaks</li>
+          <li><code>nslookup</code> — check DNS resolution</li>
+          <li><code>net user [user] /domain</code> — check account status and password expiry</li>
+          <li><code>gpupdate /force</code> — apply Group Policy immediately</li>
+          <li><code>sfc /scannow</code> — scan and repair Windows system files</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Remote Access</div>
+      <div class="tool-name">VPN Client (Cisco AnyConnect / similar)</div>
+      <div class="tool-desc">Gives remote users secure access to corporate resources. Common source of connectivity tickets — know how to isolate and fix it fast.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Confirm user has working internet without VPN first</li>
+          <li>Check credentials — has the password expired?</li>
+          <li>Update VPN client if out of date</li>
+          <li>Test from mobile hotspot (isolates local network blocking VPN ports)</li>
+          <li>Reinstall client if persistent issues</li>
+          <li>Escalate to network team with: error message, screenshot, steps tried</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tool-section-title">🎟 Ticketing &amp; ITSM</div>
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <div class="tool-category">ITSM Platform</div>
+      <div class="tool-name">ServiceNow</div>
+      <div class="tool-desc">Your central hub. Every incident, request, and change is tracked here. Interviewers expect you to know the difference between an Incident and a Request.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Log incidents (unexpected issues: user can't log in, printer down)</li>
+          <li>Create service requests (new user setup, software, hardware orders)</li>
+          <li>Triage tickets by P1/P2/P3/P4 priority and SLA</li>
+          <li>Update tickets proactively — user should never have to chase you</li>
+          <li>Assign to correct team when escalating (L2, network, vendor)</li>
+          <li>Close tickets with clear resolution notes</li>
+          <li>Build reports: ticket volume, average resolution time, repeat issues</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Remote Support</div>
+      <div class="tool-name">Remote Desktop / Quick Assist</div>
+      <div class="tool-desc">Take control of a user's machine to troubleshoot without walking to their desk. Essential for large offices and remote-first teams.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Use Quick Assist (built-in Windows) for ad-hoc remote support</li>
+          <li>Connect via RDP (port 3389) for managed machines on the same network</li>
+          <li>Use third-party tools (TeamViewer, AnyDesk) for off-network users</li>
+          <li>Guide users through troubleshooting while you watch their screen</li>
+          <li>Never leave a remote session open unattended — close when done</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tool-section-title">🔒 Security Tools</div>
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <div class="tool-category">Disk Encryption</div>
+      <div class="tool-name">BitLocker</div>
+      <div class="tool-desc">Full-disk encryption on Windows devices. Managed through Intune policy — you don't enable it manually, but you retrieve recovery keys when needed.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Retrieve recovery key from Intune if user forgets PIN or device prompts for it</li>
+          <li>Confirm BitLocker is enabled on all managed devices (Intune compliance policy)</li>
+          <li>Understand: if a device is lost, BitLocker protects the data even without remote wipe</li>
+          <li>Never share recovery keys over unsecured channels (Slack DM, plain email)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Multi-Factor Authentication</div>
+      <div class="tool-name">Microsoft Authenticator / MFA</div>
+      <div class="tool-desc">Second factor of authentication. You'll reset it when users lose access to their phone or get a new device.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Reset MFA from M365 Admin Center → user → Manage MFA</li>
+          <li>Guide users through re-registering the Authenticator app</li>
+          <li>Understand MFA methods: app notification, TOTP code, SMS, phone call</li>
+          <li>Know that admins can issue a temporary bypass for critical situations</li>
+          <li>Recommend Authenticator app over SMS (more secure, faster)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Antivirus</div>
+      <div class="tool-name">Microsoft Defender / Endpoint AV</div>
+      <div class="tool-desc">Built-in AV managed by Intune/GPO. Users don't control it — IT pushes definitions and policies centrally.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Check Defender status in Settings → Virus &amp; threat protection</li>
+          <li>Confirm definitions are up to date</li>
+          <li>Quarantine a suspicious file reported by a user</li>
+          <li>Know when to escalate to security team (suspected malware = immediate escalation, not DIY)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Self-Service</div>
+      <div class="tool-name">SSPR — Self-Service Password Reset</div>
+      <div class="tool-desc">Users reset their own password without calling helpdesk. Reduces password reset tickets by 20–30% when fully adopted.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Direct users to the SSPR portal when they call for a password reset</li>
+          <li>Confirm user has registered their phone/email for SSPR (pre-requisite)</li>
+          <li>If SSPR fails — manual reset in M365 Admin Center</li>
+          <li>Troubleshoot why a user can't complete SSPR (unregistered, MFA conflict)</li>
+          <li>Actively promote SSPR adoption to reduce your own ticket volume</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tool-section-title">📁 File Storage &amp; Collaboration</div>
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <div class="tool-category">Cloud Storage</div>
+      <div class="tool-name">OneDrive &amp; SharePoint</div>
+      <div class="tool-desc">Cloud file storage. OneDrive = personal files. SharePoint = shared team documents and sites.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Grant/revoke access to SharePoint sites (via security groups in AD)</li>
+          <li>Troubleshoot OneDrive sync issues (check sync client status in system tray)</li>
+          <li>Recover deleted files from the 30-day SharePoint recycle bin</li>
+          <li>Confirm storage quota hasn't been exceeded (1TB per user default)</li>
+          <li>Help users understand sharing permissions: view / edit / full control</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-category">Network File Shares</div>
+      <div class="tool-name">Shared Drives (UNC / SMB)</div>
+      <div class="tool-desc">Traditional shared folders accessed via network path. Still common in on-prem environments. Access controlled by AD security groups.</div>
+      <div class="tool-uses">
+        <strong>What you do:</strong>
+        <ul>
+          <li>Map drive manually via Win+R → <code>\\server\sharename</code></li>
+          <li>Confirm user is in correct security group in AD for folder access</li>
+          <li>Troubleshoot "access denied" (wrong group, group not synced)</li>
+          <li>Confirm GPO is mapping drives correctly for the user's OU</li>
+          <li>Know difference between Read, Change, and Full Control permissions</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<div class="tool-card">
-<div class="tool-category">Cloud Identity</div>
-<div class="tool-name">Entra ID (Azure AD) Admin Center</div>
-<div class="tool-desc">Cloud-based identity for hybrid/cloud-only organizations. Manages users synced from on-prem or cloud-native accounts.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>View/manage cloud users (synced from AD via AADConnect)</li>
-<li>Reset MFA for users locked out of authentication</li>
-<li>Revoke all active sessions (emergency access revocation)</li>
-<li>Assign Conditional Access policies (block risky sign-ins)</li>
-<li>Check device compliance (enrolled in Intune?)</li>
-<li>Manage password reset permissions (SSPR delegation)</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Policies</div>
-<div class="tool-name">Group Policy Management Console (gpmc.msc)</div>
-<div class="tool-desc">Push settings from one place to thousands of machines. L1/2 usually don't create GPOs, but you run gpupdate /force.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Run <code>gpupdate /force</code> when user applies policy immediately</li>
-<li>Check which policies apply to a machine (gpresult)</li>
-<li>Know common GPO purposes: password policy, desktop lockdown, mapped drives, software restriction</li>
-<li>Can create basic GPO (password complexity) if trained</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">System Management</div>
-<div class="tool-name">Services Manager (services.msc)</div>
-<div class="tool-desc">Start/stop/restart Windows services. L1/2 use it for printers, networking, updates.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Restart Print Spooler (stuck print jobs)</li>
-<li>Stop/start Windows Update service</li>
-<li>Restart BITS (Background Intelligent Transfer Service) for sync issues</li>
-<li>Check if services are set to auto-start on reboot</li>
-<li>Know which service = which function</li>
-</ul>
-</div>
-</div>
-</div>
-
-<h3 style="margin: 20px 0 12px; font-size: 14px; font-weight: 700;">📧 Email & Collaboration</h3>
-<div class="tool-grid">
-<div class="tool-card">
-<div class="tool-category">Email Admin</div>
-<div class="tool-name">Exchange Admin Center (EAC)</div>
-<div class="tool-desc">Manage mailboxes, distribution groups, mail flow, shared mailboxes.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Create/delete distribution lists</li>
-<li>Add/remove members from distribution lists</li>
-<li>Create shared mailboxes (no license needed)</li>
-<li>Set mailbox permissions (full access, send-as)</li>
-<li>Run message trace (debug missing emails)</li>
-<li>Check mail flow rules + connectors</li>
-<li>Create recovery for deleted mailboxes (within 30 days)</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Microsoft 365 Admin</div>
-<div class="tool-name">M365 Admin Center</div>
-<div class="tool-desc">One place to manage users, licenses, subscriptions, service health, everything Microsoft.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Assign/remove M365 licenses (Teams, Exchange, SharePoint, etc.)</li>
-<li>View & manage active users</li>
-<li>Reset user passwords</li>
-<li>Check Microsoft service health (is Teams down?)</li>
-<li>View audit logs (who accessed what?)</li>
-<li>Manage organization settings (password policy, MFA requirements)</li>
-<li>Reset MFA for locked-out users</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Teams Management</div>
-<div class="tool-name">Teams Admin Center</div>
-<div class="tool-desc">Manage Teams, channels, policies, meetings, app permissions.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Add/remove members from teams</li>
-<li>Reset user Teams settings if stuck</li>
-<li>Manage org-wide Teams settings (guest access, file sharing)</li>
-<li>Troubleshoot Teams meeting policies (who can record?)</li>
-<li>Manage Teams apps (pin/unpin org apps)</li>
-<li>Monitor Teams usage & activity</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Client</div>
-<div class="tool-name">Outlook</div>
-<div class="tool-desc">The client. You'll spend time troubleshooting it.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Check Exchange connection status (bottom-right corner)</li>
-<li>Test in Safe Mode (Ctrl+click icon) to isolate add-in conflicts</li>
-<li>Rebuild OST file (close Outlook → delete .ost → reopen)</li>
-<li>Create new profile if persistent sync issues</li>
-<li>Know when to suggest OWA (Outlook on web) as workaround</li>
-<li>Understand autodiscover process (setup wizard uses it)</li>
-</ul>
-</div>
-</div>
-</div>
-
-<h3 style="margin: 20px 0 12px; font-size: 14px; font-weight: 700;">🖥️ Device Management & Deployment</h3>
-<div class="tool-grid">
-<div class="tool-card">
-<div class="tool-category">Mobile Device Management</div>
-<div class="tool-name">Intune Admin Center</div>
-<div class="tool-desc">Enroll, manage, and remote wipe Windows/macOS/iOS/Android devices. Zero-touch deployment.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Enroll new devices (via Autopilot for zero-touch)</li>
-<li>Monitor device compliance (BitLocker enabled? AV installed?)</li>
-<li>Remote wipe stolen/departing-employee devices</li>
-<li>Push apps to devices (set as Required or Available)</li>
-<li>View device inventory (OS, CPU, storage)</li>
-<li>Sync device to apply new policies immediately</li>
-<li>Get BitLocker recovery keys (if device being redeployed)</li>
-<li>Configure Conditional Access (block non-compliant devices)</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Ticketing</div>
-<div class="tool-name">ServiceNow</div>
-<div class="tool-desc">Your central hub. Every request, incident, and change goes here. You live in this tool.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Create incidents (user-reported issues)</li>
-<li>Create requests (new user, software request, hardware order)</li>
-<li>Triage by priority (P1/P2/P3/P4)</li>
-<li>Update tickets proactively (never let user chase you)</li>
-<li>Assign to correct team (L2, networking, vendor)</li>
-<li>Close with brief resolution summary</li>
-<li>Track SLA compliance (response/resolution time)</li>
-<li>Build reports: ticket volume, resolution rate, repeat issues</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Network Management</div>
-<div class="tool-name">Cisco Meraki Dashboard</div>
-<div class="tool-desc">Manage WiFi, switches, firewalls (if Meraki infrastructure). View device connectivity, AP status, bandwidth usage.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Check WiFi AP status (online? signal strength?)</li>
-<li>See which devices are connected to which AP</li>
-<li>View bandwidth/signal issues by location</li>
-<li>Restart AP if needed (remotely via dashboard)</li>
-<li>Check firewall rules (if you manage them)</li>
-<li>Monitor switch port status (device plugged in?)</li>
-<li>Understand corporate vs guest networks</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Device Setup</div>
-<div class="tool-name">System Properties (sysdm.cpl)</div>
-<div class="tool-desc">Manage computer name, domain join, system information.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Join/remove from domain</li>
-<li>Rename computer</li>
-<li>Check Windows version & build</li>
-<li>View system specs (RAM, CPU)</li>
-<li>Repair broken domain trust relationships (unjoin/rejoin)</li>
-<li>Access performance/environment variables</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Event Logging</div>
-<div class="tool-name">Event Viewer (eventvwr.msc)</div>
-<div class="tool-desc">Windows system logs. Critical for troubleshooting what went wrong and when.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Check Application/System/Security logs for errors</li>
-<li>Search by event ID (quick error lookup)</li>
-<li>Identify repeated errors (e.g., 4625 = logon failure)</li>
-<li>Find timestamp of last shutdown (unexpected reboot?)</li>
-<li>Correlate with user complaints ("when did it start failing?")</li>
-<li>Export logs for higher-tier team investigation</li>
-</ul>
-</div>
-</div>
-</div>
-
-<h3 style="margin: 20px 0 12px; font-size: 14px; font-weight: 700;">🌐 Networking & Connectivity</h3>
-<div class="tool-grid">
-<div class="tool-card">
-<div class="tool-category">Network Config</div>
-<div class="tool-name">Command Prompt / PowerShell</div>
-<div class="tool-desc">Run ipconfig, ping, tracert, nslookup, netstat to troubleshoot network issues.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li><code>ipconfig /all</code> — full network details (IP, gateway, DNS)</li>
-<li><code>ipconfig /release + /renew</code> — refresh DHCP lease</li>
-<li><code>ipconfig /flushdns</code> — clear local DNS cache</li>
-<li><code>ping 8.8.8.8 -t</code> — continuous ping (check packet loss)</li>
-<li><code>ping google.com</code> — DNS test (if fails but 8.8.8.8 works = DNS issue)</li>
-<li><code>tracert google.com</code> — trace hops (find where connection breaks)</li>
-<li><code>nslookup example.com</code> — check DNS resolution</li>
-<li><code>netstat -an</code> — view active connections (check for stuck services)</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">VPN</div>
-<div class="tool-name">Cisco AnyConnect (or similar VPN client)</div>
-<div class="tool-desc">Remote access to corporate network. Common issues: won't connect, dropped sessions, slow speed.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Troubleshoot VPN connection failures</li>
-<li>Verify user credentials haven't expired</li>
-<li>Check VPN client version (outdated?)</li>
-<li>Test from mobile hotspot (isolate local network issues)</li>
-<li>Understand VPN split tunneling (route only corporate traffic through VPN)</li>
-<li>Know when to escalate to network team (ISP blocking VPN port?)</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Network Connections</div>
-<div class="tool-name">Network Settings (ncpa.cpl)</div>
-<div class="tool-desc">Configure IP, DNS, adapter settings, wired/wireless troubleshooting.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Set static IP (if DHCP failing)</li>
-<li>Change DNS servers (point to 8.8.8.8 for quick test)</li>
-<li>Disable/enable network adapter</li>
-<li>Check connection status (connected? speed?)</li>
-<li>View IPv4/IPv6 settings</li>
-<li>Know difference between Ethernet and WiFi settings</li>
-</ul>
-</div>
-</tool-card>
-</div>
-
-<h3 style="margin: 20px 0 12px; font-size: 14px; font-weight: 700;">🔒 Security & Encryption</h3>
-<div class="tool-grid">
-<div class="tool-card">
-<div class="tool-category">Encryption</div>
-<div class="tool-name">BitLocker (Full Disk Encryption)</div>
-<div class="tool-desc">Encrypts entire disk. L1/2 doesn't manage it, but you retrieve recovery keys.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Get recovery key from Intune if user forgets PIN</li>
-<li>Understand recovery key = master unlock (never share casually)</li>
-<li>Confirm BitLocker enabled on managed devices (compliance check)</li>
-<li>If device lost/stolen: BitLocker provides baseline protection</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Windows Security</div>
-<div class="tool-name">Windows Defender / Antivirus</div>
-<div class="tool-desc">Built-in AV. Managed via Intune policies. Users usually don't manage it.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Verify Defender is enabled & up-to-date (Settings → Virus & threat protection)</li>
-<li>Quarantine suspicious files</li>
-<li>Understand it's managed by group policy (IT controls updates)</li>
-<li>Know when to escalate (malware suspected → security team)</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">Password Management</div>
-<div class="tool-name">Self-Service Password Reset (SSPR)</div>
-<div class="tool-desc">Users reset their own password without calling helpdesk. Reduces tickets by 20%+.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Know SSPR portal (usually account.activedirectory.windowsazure.com)</li>
-<li>Understand users must register phone/email beforehand</li>
-<li>If user can't use SSPR → you reset manually in M365 Admin</li>
-<li>Encourage adoption (reduces your workload)</li>
-</ul>
-</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-category">MFA</div>
-<div class="tool-name">Microsoft Authenticator / MFA</div>
-<div class="tool-desc">Two-factor authentication. Users register device in M365 Admin or Entra ID.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Reset MFA if user loses phone (M365 Admin → user → Manage MFA)</li>
-<li>Understand MFA methods: app, SMS, phone call, hardware key</li>
-<li>Know TOTP (time-based one-time password) if user uses authenticator app</li>
-<li>Emergency: use backup codes if user locked out of all MFA methods</li>
-</ul>
-</div>
-</tool-card>
-</div>
-
-<h3 style="margin: 20px 0 12px; font-size: 14px; font-weight: 700;">💬 Communication & Collaboration Platforms</h3>
-<div class="tool-grid">
-<div class="tool-card">
-<div class="tool-category">Team Chat</div>
-<div class="tool-name">Microsoft Teams / Slack</div>
-<div class="tool-desc">Internal comms. Your main channel for support requests, escalations, quick questions.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Monitor IT support channel for urgent messages</li>
-<li>Use search to find previous conversations (knowledge goldmine)</li>
-<li>Understand @mentions escalate urgency</li>
-<li>Know Teams vs email: Teams = quick, Email = formal/documented</li>
-<li>Troubleshoot Teams connection issues (clear cache, reinstall)</li>
-</ul>
-</div>
-</tool-card>
-
-<div class="tool-card">
-<div class="tool-category">Video Conferencing</div>
-<div class="tool-name">Teams Meetings / Zoom</div>
-<div class="tool-desc">Troubleshoot meeting issues: can't join, audio/video failing, recording problems.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Verify camera/mic permissions (Settings → Privacy)</li>
-<li>Check device speakers/headset connected</li>
-<li>Test meeting at teams.microsoft.com (browser) vs desktop app</li>
-<li>Clear Teams cache if persistent issues</li>
-<li>Understand bandwidth requirements (video = 4 Mbps, audio = 0.5 Mbps)</li>
-</ul>
-</div>
-</tool-card>
-
-<div class="tool-card">
-<div class="tool-category">File Sharing</div>
-<div class="tool-name">OneDrive / SharePoint</div>
-<div class="tool-desc">Cloud file storage. Users sync files, collaborate on documents.</div>
-<div class="tool-uses"><strong>Day-to-day:</strong>
-<ul>
-<li>Grant/revoke access to SharePoint sites</li>
-<li>Troubleshoot file sync issues (OneDrive offline?)</li>
-<li>Understand sharing permissions (view/edit/full access)</li>
-<li>Know storage limits (1TB per user by default)</li>
-<li>Recover deleted files (30-day recycle bin in SharePoint)</li>
-</ul>
-</div>
-</tool-card>
-</div>
-
-</div>
-
-<!-- TROUBLESHOOTING PLAYBOOKS (abbreviated) -->
+<!-- ═══════════════════════════════════════════════════
+     PANEL: TROUBLESHOOTING (all 8 playbooks)
+═══════════════════════════════════════════════════ -->
 <div id="panel-ts" class="panel">
-<p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Walk through these out loud in interviews. Systematic thinking wins.</p>
-<div class="ts-grid">
-<div class="ts-card open">
-<div class="ts-title" onclick="toggleTS(this)"><span>🌐 Internet slow / not working</span><span class="ts-arrow">›</span></div>
-<div class="ts-body">
-<div class="step"><div class="step-num">1</div><div class="step-text"><strong>Isolate scope.</strong> One user or whole office? One = device. Whole = upstream.</div></div>
-<div class="step"><div class="step-num">2</div><div class="step-text">Run <code>ping 8.8.8.8 -t</code> — look for packet loss in the output.</div></div>
-<div class="step"><div class="step-num">3</div><div class="step-text">Run <code>ping google.com</code> — 8.8.8.8 works but this fails? DNS issue.</div></div>
-<div class="step"><div class="step-num">4</div><div class="step-text"><code>ipconfig /all</code> — is the IP a 169.254.x.x APIPA address? DHCP failed.</div></div>
-<div class="step"><div class="step-num">5</div><div class="step-text">Run <code>ipconfig /release</code> → <code>/renew</code> → <code>/flushdns</code>.</div></div>
-<div class="step"><div class="step-num">6</div><div class="step-text">Restart docking station. Try a different cable.</div></div>
-<div class="step"><div class="step-num">7</div><div class="step-text">WiFi: check Meraki — is the AP online? Corporate vs guest network?</div></div>
-<div class="tip">Whole office affected → contact ISP and escalate to network team immediately.</div>
-</div>
-</div>
-<div class="ts-card">
-<div class="ts-title" onclick="toggleTS(this)"><span>🔒 Can't log in / password reset</span><span class="ts-arrow">›</span></div>
-<div class="ts-body">
-<div class="step"><div class="step-num">1</div><div class="step-text"><strong>Verify identity first</strong> — confirm full name, employee ID, or manager before making changes.</div></div>
-<div class="step"><div class="step-num">2</div><div class="step-text">Check if locked: <code>dsa.msc</code> → user → Properties → Account tab → Unlock account.</div></div>
-<div class="step"><div class="step-num">3</div><div class="step-text">Reset password → right-click → Reset Password → tick "User must change at next logon".</div></div>
-<div class="step"><div class="step-num">4</div><div class="step-text">Check Event Viewer — which machine is triggering the repeated lockout?</div></div>
-<div class="step"><div class="step-num">5</div><div class="step-text">Ask: does the user have Outlook or Teams on their phone using the old password?</div></div>
-<div class="tip">Most common cause: a phone with a saved old password hammering the account.</div>
-</div>
-</div>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Walk through these out loud in interviews — systematic thinkers stand out. Click to expand.</p>
+  <div class="ts-grid">
+
+    <div class="ts-card open">
+      <div class="ts-title" onclick="toggleTS(this)"><span>🌐 Internet slow / not working</span><span class="ts-arrow">›</span></div>
+      <div class="ts-body">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Isolate scope.</strong> One user or whole office? One = device. Whole = upstream.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Run <code>ping 8.8.8.8 -t</code> — look for packet loss in the output.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Run <code>ping google.com</code> — 8.8.8.8 works but this fails? DNS issue.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text"><code>ipconfig /all</code> — is the IP a 169.254.x.x APIPA address? DHCP failed.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Run <code>ipconfig /release</code> → <code>/renew</code> → <code>/flushdns</code>.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Restart docking station. Try a different cable.</div></div>
+        <div class="step"><div class="step-num">7</div><div class="step-text">WiFi: check Meraki — is the AP online? Corporate vs guest network?</div></div>
+        <div class="tip">Whole office affected → contact ISP and escalate to network team immediately.</div>
+      </div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-title" onclick="toggleTS(this)"><span>🔒 Can't log in / password reset</span><span class="ts-arrow">›</span></div>
+      <div class="ts-body">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Verify identity first</strong> — confirm full name, employee ID, or manager before making changes.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Check if locked: <code>dsa.msc</code> → user → Properties → Account tab → Unlock account.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Reset password → right-click → Reset Password → tick "User must change at next logon".</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Check Event Viewer — which machine is triggering the repeated lockout?</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Ask: does the user have Outlook or Teams on their phone using the old password? That keeps re-locking the account.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Advise them to update saved credentials on all devices after the reset.</div></div>
+        <div class="tip">Most common cause: a phone with a saved old password hammering the account. Always ask about mobile devices.</div>
+      </div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-title" onclick="toggleTS(this)"><span>📧 Outlook not syncing</span><span class="ts-arrow">›</span></div>
+      <div class="ts-body">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Check status bar (bottom-right of Outlook) — "Connected to Exchange"?</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Test at <strong>office.com → OWA</strong>. Works there? Local client problem.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Safe Mode: <code>Ctrl + click</code> the icon. Works? Add-in conflict — disable them all in File → Options → Add-ins.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Repair: Control Panel → Programs → Microsoft 365 → Quick Repair.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Rebuild OST: close Outlook → delete <code>.ost</code> in <code>%localappdata%\Microsoft\Outlook\</code> → reopen.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">New profile: Control Panel → Mail → Show Profiles → Add → set as default.</div></div>
+        <div class="tip">Check M365 Service Health first — if Exchange is having an outage, none of these steps matter.</div>
+      </div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-title" onclick="toggleTS(this)"><span>🖨 Printer not working</span><span class="ts-arrow">›</span></div>
+      <div class="ts-body">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Isolate: just this user, or everyone? Just this printer, or all?</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Physical: on, no error lights, paper loaded, not showing offline?</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Ping the printer IP — can't reach it? Network or static IP issue.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Restart Print Spooler: <code>services.msc</code> → Print Spooler → Restart.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Remap: Win+R → <code>\\server\printername</code></div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Stuck queue: stop Spooler → delete files in <code>C:\Windows\System32\spool\PRINTERS</code> → restart Spooler.</div></div>
+      </div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-title" onclick="toggleTS(this)"><span>🎧 Teams / Audio not working</span><span class="ts-arrow">›</span></div>
+      <div class="ts-body">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Windows Sound Settings — correct output device? (Not laptop speakers.)</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Settings → Privacy → Microphone → toggle ON for Teams.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Teams: ··· → Settings → Devices → select correct mic and speaker.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Clear cache: <code>%appdata%\Microsoft\Teams</code> → delete contents → restart Teams.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Test at <strong>teams.microsoft.com</strong> (web) — isolates desktop app vs account issue.</div></div>
+      </div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-title" onclick="toggleTS(this)"><span>🔑 VPN not connecting</span><span class="ts-arrow">›</span></div>
+      <div class="ts-body">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Confirm user has working internet without VPN first.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Disconnect → reconnect. VPN client up to date?</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Check credentials — has their password expired?</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Reinstall the VPN client.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Test from mobile hotspot — rules out local network blocking VPN ports.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Escalate with: error message, screenshot, steps tried.</div></div>
+      </div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-title" onclick="toggleTS(this)"><span>💻 Laptop reported stolen</span><span class="ts-arrow">›</span></div>
+      <div class="ts-body">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Confirm genuine theft with manager — not just misplaced.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Intune → Devices → Remote Wipe.</strong> Removes all company data immediately.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Entra ID → Revoke all sign-in sessions</strong> for the user.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Disable AD account if credential compromise is suspected.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Log full incident with timestamps. Report to security / police.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Begin replacement hardware process.</div></div>
+        <div class="warn">Remote Wipe must happen immediately — never delay this step.</div>
+      </div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-title" onclick="toggleTS(this)"><span>⚠️ "Trust relationship failed"</span><span class="ts-arrow">›</span></div>
+      <div class="ts-body">
+        <p style="font-size:13px;margin-bottom:10px;color:var(--muted);">Machine account password is out of sync with the Domain Controller.</p>
+        <div class="step"><div class="step-num">1</div><div class="step-text">Log in as <strong>local admin</strong> — not the domain account.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">PowerShell: <code>Test-ComputerSecureChannel -Repair -Credential (Get-Credential)</code></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Classic: <code>sysdm.cpl</code> → remove from domain → rejoin → restart.</div></div>
+        <div class="tip">PowerShell is faster — no full disjoin/rejoin needed on modern Windows.</div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-</div>
-
-<!-- REFERENCE -->
+<!-- ═══════════════════════════════════════════════════
+     PANEL: REFERENCE (all tables)
+═══════════════════════════════════════════════════ -->
 <div id="panel-ref" class="panel">
-<div class="ref-section">
-<div class="ref-title">SLA Matrix</div>
-<table class="ref-table sla-table">
-<tr><th>Priority</th><th>Respond by</th><th>Resolve by</th><th>Example</th></tr>
-<tr><td class="p1">P1 — Critical</td><td class="p1">&lt; 15 min</td><td class="p1">&lt; 2 hrs</td><td>Server down, whole office offline</td></tr>
-<tr><td class="p2">P2 — Urgent</td><td class="p2">&lt; 1 hr</td><td class="p2">&lt; 4 hrs</td><td>User fully blocked from working</td></tr>
-<tr><td class="p3">P3 — High</td><td class="p3">&lt; 2 hrs</td><td class="p3">&lt; 8 hrs</td><td>Degraded, workaround exists</td></tr>
-<tr><td class="p4">P4 — Normal</td><td class="p4">&lt; 4 hrs</td><td class="p4">&lt; 24 hrs</td><td>Minor, non-blocking issue</td></tr>
-</table>
+
+  <div class="ref-section">
+    <div class="ref-title">SLA Matrix</div>
+    <table class="ref-table sla-table">
+      <tr><th>Priority</th><th>Respond by</th><th>Resolve by</th><th>Example</th></tr>
+      <tr><td class="p1">P1 — Critical</td><td class="p1">&lt; 15 min</td><td class="p1">&lt; 2 hrs</td><td>Server down, whole office offline</td></tr>
+      <tr><td class="p2">P2 — Urgent</td><td class="p2">&lt; 1 hr</td><td class="p2">&lt; 4 hrs</td><td>User fully blocked from working</td></tr>
+      <tr><td class="p3">P3 — High</td><td class="p3">&lt; 2 hrs</td><td class="p3">&lt; 8 hrs</td><td>Degraded, workaround exists</td></tr>
+      <tr><td class="p4">P4 — Normal</td><td class="p4">&lt; 4 hrs</td><td class="p4">&lt; 24 hrs</td><td>Minor, non-blocking issue</td></tr>
+      <tr><td>Phone answer</td><td colspan="3">&lt; 30 seconds</td></tr>
+    </table>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-title">Active Directory Daily Tasks</div>
+    <table class="ref-table">
+      <tr><th>Task</th><th>Tool</th><th>How</th></tr>
+      <tr><td>Create user</td><td>dsa.msc</td><td>Right-click OU → New → User</td></tr>
+      <tr><td>Reset password</td><td>dsa.msc</td><td>Right-click user → Reset Password</td></tr>
+      <tr><td>Unlock account</td><td>dsa.msc</td><td>Properties → Account tab → Unlock</td></tr>
+      <tr><td>Disable account</td><td>dsa.msc</td><td>Right-click → Disable Account</td></tr>
+      <tr><td>Add to group</td><td>dsa.msc</td><td>Properties → Member Of → Add</td></tr>
+      <tr><td>Check password expiry</td><td>CMD</td><td>net user [username] /domain</td></tr>
+      <tr><td>Force Group Policy</td><td>CMD</td><td>gpupdate /force</td></tr>
+      <tr><td>Join domain</td><td>sysdm.cpl</td><td>Change → Domain → enter name</td></tr>
+    </table>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-title">JAMF — Apple Device Management</div>
+    <table class="ref-table plain-table">
+      <tr><th>Topic</th><th>Detail</th></tr>
+      <tr><td>What JAMF manages</td><td>Apple devices only — Mac, iPhone, iPad (Intune handles Windows)</td></tr>
+      <tr><td>Enroll a Mac</td><td>JAMF Pro → Computers → Enroll, or zero-touch via ADE (Apple Business Manager)</td></tr>
+      <tr><td>Push a policy or app</td><td>Policies → New → scope to device/group → trigger on enrollment or schedule</td></tr>
+      <tr><td>Remote wipe</td><td>Computers → find device → Management → Wipe Computer</td></tr>
+      <tr><td>Remote lock</td><td>Computers → Management → Lock → set a 6-digit PIN</td></tr>
+      <tr><td>Check device inventory</td><td>Computers → All Computers → filter by OS, department, compliance</td></tr>
+      <tr><td>Smart Group</td><td>Dynamic group — auto-includes devices matching criteria (like Entra dynamic groups)</td></tr>
+      <tr><td>JAMF vs Intune</td><td>Same concept, different platform. JAMF = Apple. Intune = Windows/cross-platform.</td></tr>
+    </table>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-title">CMD / PowerShell Cheat Sheet</div>
+    <table class="ref-table cmd-table">
+      <tr><th>Command</th><th>Use it for</th></tr>
+      <tr><td>ipconfig /all</td><td>Full network info — IP, gateway, DNS, MAC, DHCP server</td></tr>
+      <tr><td>ipconfig /release + /renew</td><td>Drop and request a new DHCP lease</td></tr>
+      <tr><td>ipconfig /flushdns</td><td>Clear local DNS cache</td></tr>
+      <tr><td>ping 8.8.8.8 -t</td><td>Continuous ping — check for packet loss</td></tr>
+      <tr><td>tracert google.com</td><td>Find which hop (router) is failing</td></tr>
+      <tr><td>nslookup google.com</td><td>Check what IP DNS returns for a name</td></tr>
+      <tr><td>gpupdate /force</td><td>Apply Group Policy immediately</td></tr>
+      <tr><td>net user [user] /domain</td><td>Check account status, last password change, expiry</td></tr>
+      <tr><td>whoami /groups</td><td>See all security groups the current user is in</td></tr>
+      <tr><td>sfc /scannow</td><td>Scan and repair corrupted Windows system files</td></tr>
+      <tr><td>netstat -an</td><td>See all active network connections and listening ports</td></tr>
+      <tr><td>arp -a</td><td>Show ARP table (IP to MAC address mappings)</td></tr>
+    </table>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-title">Key Port Numbers</div>
+    <table class="ref-table port-table">
+      <tr><th>Port</th><th>Protocol</th><th>What it does</th></tr>
+      <tr><td>21</td><td>FTP</td><td>File transfer (unencrypted)</td></tr>
+      <tr><td>22</td><td>SSH</td><td>Secure remote shell</td></tr>
+      <tr><td>25</td><td>SMTP</td><td>Outgoing mail — server to server</td></tr>
+      <tr><td>53</td><td>DNS</td><td>Name resolution</td></tr>
+      <tr><td>80</td><td>HTTP</td><td>Web (unencrypted)</td></tr>
+      <tr><td>110</td><td>POP3</td><td>Incoming mail — downloads to local</td></tr>
+      <tr><td>143</td><td>IMAP</td><td>Incoming mail — server sync</td></tr>
+      <tr><td>389</td><td>LDAP</td><td>Directory services (Active Directory)</td></tr>
+      <tr><td>443</td><td>HTTPS</td><td>Secure web</td></tr>
+      <tr><td>587</td><td>SMTP/TLS</td><td>Outgoing mail — client to server (secure)</td></tr>
+      <tr><td>3389</td><td>RDP</td><td>Remote Desktop Protocol</td></tr>
+    </table>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-title">Windows Run Commands</div>
+    <table class="ref-table cmd-table">
+      <tr><th>Command</th><th>Opens</th></tr>
+      <tr><td>sysdm.cpl</td><td>System Properties — domain join, PC rename</td></tr>
+      <tr><td>ncpa.cpl</td><td>Network Connections — static IP, toggle NIC</td></tr>
+      <tr><td>appwiz.cpl</td><td>Programs &amp; Features — uninstall / repair Office</td></tr>
+      <tr><td>services.msc</td><td>Services — restart Print Spooler, Windows Update</td></tr>
+      <tr><td>eventvwr.msc</td><td>Event Viewer — error codes, crash logs</td></tr>
+      <tr><td>dsa.msc</td><td>AD Users &amp; Computers — manage domain users</td></tr>
+      <tr><td>gpmc.msc</td><td>Group Policy Management Console</td></tr>
+      <tr><td>diskmgmt.msc</td><td>Disk Management — partition drives</td></tr>
+      <tr><td>compmgmt.msc</td><td>Computer Management — local users, disk, services</td></tr>
+    </table>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-title">OSI Model — Practical Reference</div>
+    <table class="ref-table">
+      <tr><th>Layer</th><th>Name</th><th>Protocols / Devices</th><th>Real-world example</th></tr>
+      <tr><td>7</td><td>Application</td><td>HTTP, DNS, SMTP, FTP</td><td>Chrome, Outlook</td></tr>
+      <tr><td>6</td><td>Presentation</td><td>SSL/TLS, encryption</td><td>HTTPS certificate</td></tr>
+      <tr><td>5</td><td>Session</td><td>NetBIOS, RPC</td><td>Starting a Remote Desktop session</td></tr>
+      <tr><td>4</td><td>Transport</td><td>TCP, UDP</td><td>TCP for email, UDP for Teams calls</td></tr>
+      <tr><td>3</td><td>Network</td><td>IP, ICMP, routers</td><td>ping, tracert, routing between networks</td></tr>
+      <tr><td>2</td><td>Data Link</td><td>Ethernet, MAC, switches</td><td>Switch forwarding by MAC address</td></tr>
+      <tr><td>1</td><td>Physical</td><td>Cat5/Cat6, NIC, hubs</td><td>The cable in the wall</td></tr>
+    </table>
+    <p style="font-size:12px;color:var(--muted);margin-top:8px;">Mnemonic (bottom up): <strong>P</strong>lease <strong>D</strong>o <strong>N</strong>ot <strong>T</strong>hrow <strong>S</strong>ausage <strong>P</strong>izza <strong>A</strong>way</p>
+  </div>
+
 </div>
-</div>
+<!-- END REFERENCE -->
 
 <script>
+const TOTAL_QA = 15;
+
 function switchTab(name, btn) {
-document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-document.getElementById('panel-' + name).classList.add('active');
-btn.classList.add('active');
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  btn.classList.add('active');
 }
 
 function toggleQA(el) { el.closest('.qa-item').classList.toggle('open'); }
@@ -940,22 +1382,49 @@ function toggleQA(el) { el.closest('.qa-item').classList.toggle('open'); }
 function toggleTS(el) { el.closest('.ts-card').classList.toggle('open'); }
 
 function markReviewed(id, btn) {
-const item = document.getElementById(id);
-const reviewed = item.classList.toggle('reviewed');
-const stored = JSON.parse(localStorage.getItem('itrev') || '[]');
-if (reviewed) { btn.textContent = 'Reviewed'; if (!stored.includes(id)) stored.push(id); }
-else { btn.textContent = 'Mark as reviewed'; const i = stored.indexOf(id); if (i > -1) stored.splice(i, 1); }
-localStorage.setItem('itrev', JSON.stringify(stored));
+  const item = document.getElementById(id);
+  const reviewed = item.classList.toggle('reviewed');
+  const stored = JSON.parse(localStorage.getItem('itrev') || '[]');
+  if (reviewed) {
+    btn.textContent = 'Reviewed';
+    if (!stored.includes(id)) stored.push(id);
+  } else {
+    btn.textContent = 'Mark as reviewed';
+    const i = stored.indexOf(id);
+    if (i > -1) stored.splice(i, 1);
+  }
+  localStorage.setItem('itrev', JSON.stringify(stored));
+  updateProgress();
+}
+
+function updateProgress() {
+  const stored = JSON.parse(localStorage.getItem('itrev') || '[]');
+  const c = stored.length;
+  document.getElementById('prog-fill').style.width = Math.round((c / TOTAL_QA) * 100) + '%';
+  document.getElementById('prog-count').textContent = c + ' / ' + TOTAL_QA;
+}
+
+function resetProgress() {
+  localStorage.removeItem('itrev');
+  document.querySelectorAll('.qa-item').forEach(el => el.classList.remove('reviewed'));
+  document.querySelectorAll('.mark-btn').forEach(btn => btn.textContent = 'Mark as reviewed');
+  updateProgress();
 }
 
 window.addEventListener('load', () => {
-const stored = JSON.parse(localStorage.getItem('itrev') || '[]');
-stored.forEach(id => {
-const item = document.getElementById(id);
-if (item) { item.classList.add('reviewed'); const btn = item.querySelector('.mark-btn'); if (btn) btn.textContent = 'Reviewed'; }
-});
+  const stored = JSON.parse(localStorage.getItem('itrev') || '[]');
+  stored.forEach(id => {
+    const item = document.getElementById(id);
+    if (item) {
+      item.classList.add('reviewed');
+      const btn = item.querySelector('.mark-btn');
+      if (btn) btn.textContent = 'Reviewed';
+    }
+  });
+  updateProgress();
 });
 </script>
 
+</div>
 </body>
 </html>
