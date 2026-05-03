@@ -5,221 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IT Support Interview — Comprehensive Revision</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #0b0e13; --bg2: #111620; --bg3: #161c28;
-  --border: #1e2a3a; --border2: #243040;
-  --green: #00e676; --green-dim: #00b85a; --green-glow: rgba(0,230,118,0.10);
-  --amber: #ffb300; --amber-dim: rgba(255,179,0,0.13); --amber-border: rgba(255,179,0,0.25);
-  --blue: #42a5f5; --blue-dim: rgba(66,165,245,0.12); --blue-border: rgba(66,165,245,0.2);
-  --purple: #ce93d8; --purple-dim: rgba(206,147,216,0.12); --purple-border: rgba(206,147,216,0.2);
-  --teal: #4dd0e1; --teal-dim: rgba(77,208,225,0.12); --teal-border: rgba(77,208,225,0.2);
-  --red: #ff5252; --red-dim: rgba(255,82,82,0.12); --red-border: rgba(255,82,82,0.2);
-  --text: #c9d4e3; --text2: #7a8fa8; --text3: #4a5a6e;
-  --mono: 'JetBrains Mono', monospace;
-  --sans: 'DM Sans', sans-serif;
-  --radius: 8px;
-  --shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 15px; scroll-behavior: smooth; }
-body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
-a { text-decoration: none; color: inherit; }
-
-/* ── TOPBAR ── */
-.topbar { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 52px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
-.topbar-brand { font-family: var(--mono); font-size: 13px; color: var(--text2); display: flex; align-items: center; gap: 8px; }
-.topbar-brand .prompt { color: var(--green); }
-.cursor { display: inline-block; width: 7px; height: 14px; background: var(--green); animation: blink 1.1s step-end infinite; vertical-align: middle; margin-left: 1px; }
-@keyframes blink { 50% { opacity: 0; } }
-.topbar-nav { display: flex; gap: 20px; align-items: center; }
-.topbar-nav a { font-size: 13px; color: var(--text2); font-family: var(--mono); transition: color .15s; }
-.topbar-nav a:hover { color: var(--green); }
-
-/* ── PAGE LAYOUT ── */
-.page { max-width: 1000px; margin: 0 auto; padding: 32px 20px 80px; }
-
-/* ── HEADER ── */
-.header { margin-bottom: 8px; }
-.header-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-.header-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--green); }
-.header h1 { font-size: clamp(20px, 3vw, 28px); font-weight: 600; color: var(--text); letter-spacing: -0.3px; margin-bottom: 4px; }
-.header p { color: var(--text2); font-size: 13px; font-family: var(--mono); }
-.badges { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
-.badge { font-family: var(--mono); font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 4px; border: 1px solid transparent; }
-.badge-blue { background: var(--blue-dim); color: var(--blue); border-color: var(--blue-border); }
-.badge-green { background: var(--green-glow); color: var(--green); border-color: rgba(0,230,118,.2); }
-.badge-amber { background: var(--amber-dim); color: var(--amber); border-color: var(--amber-border); }
-
-/* ── PROGRESS ── */
-.progress-wrap { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; margin: 20px 0; display: flex; align-items: center; gap: 14px; }
-.progress-label { font-family: var(--mono); font-size: 11px; color: var(--text3); white-space: nowrap; letter-spacing: .06em; text-transform: uppercase; }
-.progress-bar-bg { flex: 1; background: var(--border); border-radius: 99px; height: 4px; }
-.progress-bar-fill { height: 4px; border-radius: 99px; background: var(--green); transition: width 0.4s; box-shadow: 0 0 8px var(--green-glow); }
-.progress-count { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--green); white-space: nowrap; }
-.reset-btn { font-family: var(--mono); font-size: 11px; color: var(--text3); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; cursor: pointer; transition: all .15s; }
-.reset-btn:hover { color: var(--red); border-color: var(--red-border); }
-
-/* ── TABS ── */
-.tabs { display: flex; gap: 4px; margin-bottom: 28px; background: var(--bg2); border: 1px solid var(--border); padding: 4px; border-radius: var(--radius); width: fit-content; flex-wrap: wrap; }
-.tab { padding: 7px 16px; border-radius: 6px; border: none; background: transparent; cursor: pointer; font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--text3); transition: all 0.15s; letter-spacing: .03em; }
-.tab.active { background: var(--bg3); color: var(--green); border: 1px solid var(--border2); }
-.tab:hover:not(.active) { color: var(--text2); background: var(--bg3); }
-.panel { display: none; }
-.panel.active { display: block; }
-
-/* ── SECTION LABEL ── */
-.section-label-bar { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text3); margin: 24px 0 12px; display: flex; align-items: center; gap: 10px; }
-.section-label-bar:first-child { margin-top: 0; }
-.section-label-bar::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-/* ── RAPID FIRE ── */
-.rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
-@media (max-width: 620px) { .rf-grid { grid-template-columns: 1fr; } }
-.rf-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.rf-header { padding: 10px 14px; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
-.rf-header.blue  { color: var(--blue);   border-left: 3px solid var(--blue);   background: var(--blue-dim); }
-.rf-header.green { color: var(--green);  border-left: 3px solid var(--green);  background: var(--green-glow); }
-.rf-header.amber { color: var(--amber);  border-left: 3px solid var(--amber);  background: var(--amber-dim); }
-.rf-header.purple{ color: var(--purple); border-left: 3px solid var(--purple); background: var(--purple-dim); }
-.rf-header.red   { color: var(--red);    border-left: 3px solid var(--red);    background: var(--red-dim); }
-.rf-header.teal  { color: var(--teal);   border-left: 3px solid var(--teal);   background: var(--teal-dim); }
-.rf-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; border-bottom: 1px solid var(--border); gap: 12px; }
-.rf-row:last-child { border-bottom: none; }
-.rf-q { color: var(--text2); font-size: 12px; flex: 1; }
-.rf-a { font-family: var(--mono); font-weight: 600; font-size: 12px; text-align: right; color: var(--text); }
-.rf-a code { background: var(--bg3); border: 1px solid var(--border2); border-radius: 4px; padding: 1px 6px; font-family: var(--mono); font-size: 11px; color: var(--green); }
-
-/* ── INTERVIEW Q&A ── */
-.qa-list { display: flex; flex-direction: column; gap: 8px; }
-.qa-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s; }
-.qa-item.reviewed { border-color: var(--green-dim); }
-.qa-item.reviewed::before { content: ''; display: block; height: 2px; background: var(--green); }
-.qa-q { padding: 14px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-.qa-q:hover { background: var(--bg3); }
-.qa-label { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
-.qa-text { font-size: 14px; font-weight: 500; color: var(--text); }
-.qa-arrow { font-family: var(--mono); font-size: 16px; color: var(--text3); transition: transform 0.2s; flex-shrink: 0; margin-top: 2px; }
-.qa-item.open .qa-arrow { transform: rotate(90deg); color: var(--green); }
-.qa-body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); }
-.qa-item.open .qa-body { display: block; }
-.qa-answer { background: var(--blue-dim); border-left: 3px solid var(--blue); padding: 12px 14px; border-radius: 0 6px 6px 0; margin: 12px 0 8px; font-size: 13px; line-height: 1.7; color: var(--text); }
-.qa-answer.amber { background: var(--amber-dim); border-left-color: var(--amber); }
-.qa-answer.green { background: var(--green-glow); border-left-color: var(--green); }
-.qa-body p { margin-top: 8px; font-size: 13px; color: var(--text2); line-height: 1.6; }
-.qa-body strong { color: var(--text); font-weight: 600; }
-.qa-body ul { margin: 8px 0 0 16px; font-size: 13px; color: var(--text2); }
-.qa-body ul li { margin-bottom: 4px; }
-
-/* tags */
-.tag { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; border: 1px solid transparent; }
-.tag-common { background: var(--red-dim);    color: var(--red);    border-color: var(--red-border); }
-.tag-tech   { background: var(--blue-dim);   color: var(--blue);   border-color: var(--blue-border); }
-.tag-behav  { background: var(--amber-dim);  color: var(--amber);  border-color: var(--amber-border); }
-.tag-trap   { background: var(--purple-dim); color: var(--purple); border-color: var(--purple-border); }
-
-.mark-btn { margin-top: 12px; font-family: var(--mono); font-size: 11px; padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg3); cursor: pointer; color: var(--text3); transition: all .15s; }
-.mark-btn:hover { border-color: var(--green-dim); color: var(--green); }
-.qa-item.reviewed .mark-btn { background: var(--green-glow); border-color: var(--green-dim); color: var(--green); }
-
-.short-tip { background: var(--amber-dim); border-left: 3px solid var(--amber); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 8px; font-size: 12px; color: var(--amber); }
-
-/* ── TROUBLESHOOTING ── */
-.ts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
-@media (max-width: 640px) { .ts-grid { grid-template-columns: 1fr; } }
-.ts-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.ts-title { padding: 12px 14px; font-weight: 500; font-size: 13px; color: var(--text); border-bottom: 1px solid transparent; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background .15s; }
-.ts-title:hover { background: var(--bg3); }
-.ts-card.open .ts-title { border-bottom-color: var(--border); color: var(--green); }
-.ts-body { display: none; padding: 12px 14px; }
-.ts-card.open .ts-body { display: block; }
-.ts-card.open .ts-arrow { transform: rotate(90deg); color: var(--green); }
-.ts-arrow { font-family: var(--mono); transition: transform 0.2s; color: var(--text3); }
-.step { display: flex; gap: 10px; margin-bottom: 8px; align-items: flex-start; }
-.step-num { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-.step-text { font-size: 13px; line-height: 1.6; color: var(--text2); }
-.step-text strong { color: var(--text); }
-.step-text code { background: var(--bg3); border: 1px solid var(--border2); border-radius: 4px; padding: 0 5px; font-family: var(--mono); font-size: 11px; color: var(--green); }
-.tip  { background: var(--green-glow); border-left: 3px solid var(--green); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; font-size: 12px; color: var(--green); }
-.warn { background: var(--amber-dim); border-left: 3px solid var(--amber); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; font-size: 12px; color: var(--amber); }
-
-/* ── REFERENCE TABLES ── */
-.ref-section { margin-bottom: 24px; }
-.ref-title { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); margin-bottom: 10px; }
-.ref-table { width: 100%; border-collapse: collapse; background: var(--bg2); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-.ref-table th { background: var(--bg3); padding: 9px 12px; text-align: left; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text3); border-bottom: 1px solid var(--border); }
-.ref-table td { padding: 8px 12px; font-size: 13px; border-bottom: 1px solid var(--border); color: var(--text2); }
-.ref-table tr:last-child td { border-bottom: none; }
-.ref-table tr:hover td { background: var(--bg3); }
-.ref-table td:first-child { font-family: var(--mono); font-size: 11px; color: var(--green); }
-.cmd-table   td:first-child { color: var(--purple); }
-.port-table  td:first-child { font-weight: 700; color: var(--amber); }
-.sla-table   td:first-child { font-family: var(--sans); font-size: 13px; }
-.plain-table td:first-child { font-family: var(--sans); color: var(--text); font-size: 13px; }
-.p1 { color: var(--red) !important;    font-weight: 700; }
-.p2 { color: var(--amber) !important;  font-weight: 600; }
-.p3 { color: var(--blue) !important;   font-weight: 600; }
-.p4 { color: var(--green) !important; }
-
-/* ── TIMELINE ── */
-.timeline { position: relative; padding: 4px 0; }
-.timeline-event { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; }
-.timeline-left { display: flex; flex-direction: column; align-items: flex-end; min-width: 80px; padding-top: 12px; }
-.timeline-time { font-family: var(--mono); font-weight: 700; color: var(--green); font-size: 11px; white-space: nowrap; }
-.timeline-content { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--green-dim); border-radius: 0 var(--radius) var(--radius) 0; padding: 12px 14px; flex: 1; transition: border-left-color .2s; }
-.timeline-content:hover { border-left-color: var(--green); }
-.timeline-content strong { font-size: 13px; font-weight: 600; color: var(--text); display: block; margin-bottom: 4px; }
-.timeline-content p { font-size: 13px; color: var(--text2); line-height: 1.6; }
-
-/* ── ONBOARDING / OFFBOARDING ── */
-.ob-section-title { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text); margin: 24px 0 12px; display: flex; align-items: center; gap: 8px; }
-.ob-section-title:first-child { margin-top: 0; }
-.checklist-wrap { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.checklist-phase { border-bottom: 1px solid var(--border); }
-.checklist-phase:last-child { border-bottom: none; }
-.checklist-phase-title { padding: 10px 14px; background: var(--bg3); font-family: var(--mono); font-weight: 600; font-size: 11px; color: var(--text2); border-bottom: 1px solid var(--border); letter-spacing: .04em; }
-.checklist-items { padding: 12px 14px; }
-.checklist-item { display: flex; gap: 10px; margin-bottom: 8px; font-size: 13px; align-items: flex-start; }
-.checklist-item:last-child { margin-bottom: 0; }
-.check-icon { color: var(--green); font-weight: 700; flex-shrink: 0; line-height: 1.6; font-family: var(--mono); }
-.check-text { color: var(--text2); line-height: 1.6; }
-.check-text strong { color: var(--text); }
-
-/* ── TOOLS ── */
-.tool-section-title { font-family: var(--mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text3); margin: 28px 0 12px; display: flex; align-items: center; gap: 10px; }
-.tool-section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-.tool-section-title:first-child { margin-top: 0; }
-.tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
-@media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
-.tool-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; transition: border-color .2s, transform .15s; }
-.tool-card:hover { border-color: var(--border2); transform: translateY(-1px); }
-.tool-category { font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
-.tool-name { font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 6px; }
-.tool-desc { font-size: 12px; color: var(--text2); margin-bottom: 10px; line-height: 1.55; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-.tool-uses { font-size: 12px; }
-.tool-uses strong { color: var(--green); font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; display: block; margin-bottom: 6px; }
-.tool-uses ul { margin-left: 16px; }
-.tool-uses ul li { color: var(--text2); margin-bottom: 4px; line-height: 1.5; }
-.tool-uses ul li code { font-family: var(--mono); font-size: 10px; color: var(--green); background: var(--bg3); border: 1px solid var(--border2); border-radius: 3px; padding: 0 4px; }
-
-/* ── INTRO TEXT ── */
-.panel-intro { color: var(--text3); font-size: 12px; font-family: var(--mono); margin-bottom: 20px; line-height: 1.6; border-left: 3px solid var(--border2); padding-left: 12px; }
-
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 600px) {
-  .topbar { padding: 0 1rem; }
-  .topbar-nav { gap: 12px; }
-  .page { padding: 20px 14px 60px; }
-  .tabs { gap: 2px; }
-  .tab { padding: 6px 10px; font-size: 10px; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -1151,7 +938,7 @@ a { text-decoration: none; color: inherit; }
     <div class="ts-card">
       <div class="ts-title" onclick="toggleTS(this)"><span>⚠️ "Trust relationship failed"</span><span class="ts-arrow">›</span></div>
       <div class="ts-body">
-        <p style="font-size:13px;margin-bottom:10px;color:var(--text3);">Machine account password is out of sync with the Domain Controller.</p>
+        <p style="font-size:13px;margin-bottom:10px;color:var(--text-muted);">Machine account password is out of sync with the Domain Controller.</p>
         <div class="step"><div class="step-num">1</div><div class="step-text">Log in as <strong>local admin</strong> — not the domain account.</div></div>
         <div class="step"><div class="step-num">2</div><div class="step-text">PowerShell: <code>Test-ComputerSecureChannel -Repair -Credential (Get-Credential)</code></div></div>
         <div class="step"><div class="step-num">3</div><div class="step-text">Classic: <code>sysdm.cpl</code> → remove from domain → rejoin → restart.</div></div>
@@ -1327,7 +1114,7 @@ a { text-decoration: none; color: inherit; }
       <tr><td>2</td><td>Data Link</td><td>Ethernet, MAC, switches</td><td>Switch forwarding by MAC address</td></tr>
       <tr><td>1</td><td>Physical</td><td>Cat5/Cat6, NIC, hubs</td><td>The cable in the wall</td></tr>
     </table>
-    <p style="font-size:12px;color:var(--text3);margin-top:8px;font-family:var(--mono);">Mnemonic (bottom up): <strong style="color:var(--text2);">P</strong>lease <strong style="color:var(--text2);">D</strong>o <strong style="color:var(--text2);">N</strong>ot <strong style="color:var(--text2);">T</strong>hrow <strong style="color:var(--text2);">S</strong>ausage <strong style="color:var(--text2);">P</strong>izza <strong style="color:var(--text2);">A</strong>way</p>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;font-family:var(--mono);">Mnemonic (bottom up): <strong style="color:var(--text-muted);">P</strong>lease <strong style="color:var(--text-muted);">D</strong>o <strong style="color:var(--text-muted);">N</strong>ot <strong style="color:var(--text-muted);">T</strong>hrow <strong style="color:var(--text-muted);">S</strong>ausage <strong style="color:var(--text-muted);">P</strong>izza <strong style="color:var(--text-muted);">A</strong>way</p>
   </div>
 
 </div>
@@ -1346,9 +1133,9 @@ a { text-decoration: none; color: inherit; }
   <div class="section-label-bar">What's Actually Happening in a Phone Screen</div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
-    <div style="background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--radius);padding:16px;">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--radius);padding:16px;">
       <div style="font-family:var(--mono);font-size:10px;color:var(--amber);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">What they're assessing</div>
-      <ul style="font-size:13px;color:var(--text2);margin-left:16px;line-height:1.8;">
+      <ul style="font-size:13px;color:var(--text-muted);margin-left:16px;line-height:1.8;">
         <li>Can you communicate clearly without jargon overload?</li>
         <li>Do you seem like a normal person to work with?</li>
         <li>Are your salary expectations in range?</li>
@@ -1356,9 +1143,9 @@ a { text-decoration: none; color: inherit; }
         <li>Are you actually available / interested?</li>
       </ul>
     </div>
-    <div style="background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--radius);padding:16px;">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--radius);padding:16px;">
       <div style="font-family:var(--mono);font-size:10px;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">What to have ready</div>
-      <ul style="font-size:13px;color:var(--text2);margin-left:16px;line-height:1.8;">
+      <ul style="font-size:13px;color:var(--text-muted);margin-left:16px;line-height:1.8;">
         <li>Your resume open in front of you</li>
         <li>The job description open — know the role title and company</li>
         <li>A quiet place with good signal</li>
@@ -1424,7 +1211,7 @@ a { text-decoration: none; color: inherit; }
       <div class="ts-title" onclick="toggleTS(this)"><span>Do you have any questions for me?</span><span class="ts-arrow">›</span></div>
       <div class="ts-body">
         <div class="qa-answer green">Always ask 2 questions. These work well at recruiter screen stage:</div>
-        <ul style="margin:10px 0 0 16px;font-size:13px;color:var(--text2);line-height:1.8;">
+        <ul style="margin:10px 0 0 16px;font-size:13px;color:var(--text-muted);line-height:1.8;">
           <li>"What does the tech environment look like — mostly cloud, hybrid, or on-prem?"</li>
           <li>"What's the team structure — is this a solo role or part of a broader IT team?"</li>
           <li>"What's driven the need for this role — is it backfill or growth?"</li>
@@ -1440,8 +1227,8 @@ a { text-decoration: none; color: inherit; }
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
 
-    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;">
-      <div style="font-family:var(--mono);font-size:10px;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">What to look up</div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">What to look up</div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">1</div><div class="step-text"><strong>What does the company actually do?</strong> Can you explain it in one sentence? If not, look it up.</div></div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">2</div><div class="step-text"><strong>Company size &amp; headcount.</strong> 50 staff vs 5,000 means completely different IT environments.</div></div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">3</div><div class="step-text"><strong>Tech stack hints.</strong> LinkedIn job posts often reveal the stack — do they mention M365, Google Workspace, AWS, Azure?</div></div>
@@ -1449,7 +1236,7 @@ a { text-decoration: none; color: inherit; }
       <div class="step"><div class="step-num">5</div><div class="step-text"><strong>Glassdoor.</strong> Quick scan of IT/support reviews. Any patterns around culture, management, or pace?</div></div>
     </div>
 
-    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;">
       <div style="font-family:var(--mono);font-size:10px;color:var(--purple);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Red flags to watch for</div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">!</div><div class="step-text"><strong>Role posted multiple times.</strong> High churn or unrealistic expectations — ask the recruiter directly.</div></div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">!</div><div class="step-text"><strong>"Competitive salary" with no range.</strong> Usually means below market. Get a number before investing time.</div></div>
@@ -1461,7 +1248,7 @@ a { text-decoration: none; color: inherit; }
   </div>
 
   <div class="section-label-bar">Phone Screen Mindset</div>
-  <div style="background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--radius);padding:16px 20px;font-size:13px;color:var(--text2);line-height:1.8;">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--radius);padding:16px 20px;font-size:13px;color:var(--text-muted);line-height:1.8;">
     <p style="margin-bottom:8px;">You are also interviewing them. A phone screen is a two-way filter. Your goal is not just to pass — it's to figure out if this role is worth investing more time in.</p>
     <p style="margin-bottom:8px;">Speak at 80% of your normal speed. Phone audio compresses voice quality. Slow down slightly — it reads as calm confidence.</p>
     <p style="margin-bottom:8px;">If you get a question you don't immediately have an answer for, it's fine to say: <em style="color:var(--text);">"That's a good question — let me think about that for a second."</em> A two-second pause sounds far better than a rushed wrong answer.</p>
@@ -1500,11 +1287,11 @@ a { text-decoration: none; color: inherit; }
 
   <div class="section-label-bar">Thank You Email Template</div>
 
-  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;">
-    <div style="background:var(--bg3);border-bottom:1px solid var(--border);padding:10px 16px;font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;">Template — adapt this, don't copy verbatim</div>
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;">
+    <div style="background:var(--bg-hover);border-bottom:1px solid var(--border);padding:10px 16px;font-family:var(--mono);font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">Template — adapt this, don't copy verbatim</div>
     <div style="padding:16px 18px;">
-      <p style="font-size:13px;color:var(--text3);font-family:var(--mono);margin-bottom:8px;">Subject: Thank you — [Role Title] interview</p>
-      <div style="font-size:13px;color:var(--text2);line-height:1.9;border-left:3px solid var(--green-dim);padding-left:14px;margin-top:10px;">
+      <p style="font-size:13px;color:var(--text-muted);font-family:var(--mono);margin-bottom:8px;">Subject: Thank you — [Role Title] interview</p>
+      <div style="font-size:13px;color:var(--text-muted);line-height:1.9;border-left:3px solid var(--green-dim);padding-left:14px;margin-top:10px;">
         <p>Hi [Name],</p>
         <br>
         <p>Thank you for taking the time to speak with me today about the [Role Title] position. I enjoyed hearing about [specific thing they mentioned — the team structure, the upcoming project, the tech environment].</p>
@@ -1521,7 +1308,7 @@ a { text-decoration: none; color: inherit; }
 
   <div class="section-label-bar">Follow-Up Timing — When to Chase</div>
 
-  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;">
     <table class="ref-table plain-table" style="margin:0;">
       <tr><th>Situation</th><th>When to follow up</th><th>How</th></tr>
       <tr><td>They gave you a timeline ("we'll get back to you by Friday")</td><td>Monday — if you haven't heard by end of day</td><td>Short email to recruiter: "Just checking in on the [role] — still very interested."</td></tr>
@@ -1534,14 +1321,14 @@ a { text-decoration: none; color: inherit; }
   <div class="section-label-bar">Receiving an Offer — Don't Accept on the Spot</div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
-    <div style="background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:var(--radius);padding:16px;">
-      <div style="font-family:var(--mono);font-size:10px;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">When the offer comes in</div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius);padding:16px;">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">When the offer comes in</div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">1</div><div class="step-text">Thank them and express genuine interest — "I'm really pleased to receive this."</div></div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">2</div><div class="step-text">Ask for the offer in writing before committing to anything verbally.</div></div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">3</div><div class="step-text">Ask for 24–48 hours to review. Any legitimate employer will give this. It's not a red flag to ask.</div></div>
       <div class="step"><div class="step-num">4</div><div class="step-text">Notify other active applications immediately — "I have an offer, can you update me on your timeline?"</div></div>
     </div>
-    <div style="background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--radius);padding:16px;">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--radius);padding:16px;">
       <div style="font-family:var(--mono);font-size:10px;color:var(--amber);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">What to check in the offer letter</div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">1</div><div class="step-text"><strong>Base salary</strong> — matches what was discussed?</div></div>
       <div class="step" style="margin-bottom:8px;"><div class="step-num">2</div><div class="step-text"><strong>Super rate</strong> — 11.5% is the 2024/25 minimum. Anything above is a positive.</div></div>
@@ -1552,14 +1339,14 @@ a { text-decoration: none; color: inherit; }
   </div>
 
   <div class="section-label-bar">Negotiating the Offer</div>
-  <div style="background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--radius);padding:16px 20px;font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:24px;">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--radius);padding:16px 20px;font-size:13px;color:var(--text-muted);line-height:1.8;margin-bottom:24px;">
     <p style="margin-bottom:10px;"><strong style="color:var(--text);">You can always ask.</strong> The worst they can say is no. Most companies expect a counter, especially at this level.</p>
     <p style="margin-bottom:8px;">Script: <em style="color:var(--text);">"I'm very keen on this role and the team. The offer is close to what I was hoping for — is there any flexibility to get to [target]? I think given my [specific experience / what you bring], that's a fair ask."</em></p>
     <p>If they can't move on base, ask about: <strong style="color:var(--text);">start date flexibility, training budget, extra leave, WFH days, or an earlier salary review.</strong> Total package matters more than base alone.</p>
   </div>
 
   <div class="section-label-bar">If You Don't Get the Role</div>
-  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;font-size:13px;color:var(--text2);line-height:1.8;">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;font-size:13px;color:var(--text-muted);line-height:1.8;">
     <div class="step" style="margin-bottom:8px;"><div class="step-num">1</div><div class="step-text">Reply to the rejection and ask for feedback: <em style="color:var(--text);">"Thank you for letting me know. I'd genuinely welcome any feedback on my application or interviews — it would help me improve."</em> Most won't reply. Some will, and it's gold.</div></div>
     <div class="step" style="margin-bottom:8px;"><div class="step-num">2</div><div class="step-text">Review your notes from the interview — were there gaps you can close? A certification, a home lab project, or a better-prepared answer?</div></div>
     <div class="step"><div class="step-num">3</div><div class="step-text">Keep the recruiter warm — <em style="color:var(--text);">"Please keep me in mind for future roles."</em> Agency recruiters have pipelines. This conversation may come back around in 3 months.</div></div>
